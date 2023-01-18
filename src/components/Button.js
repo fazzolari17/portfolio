@@ -1,5 +1,9 @@
-const Button = ({ href, buttonName, style }) => {
+const Button = ({ href, buttonName, style, handleClick, invert }) => {
 
+  const styling = invert
+    ? { backgroundColor: 'var(--heder-text, #F0F8FF)', color: 'var(--header-background, #071013)' }
+    : { backgroundColor: 'var(--header-background, #071013)', color: 'var(--heder-text, #F0F8FF)' }
+  
   const componentStyle = {
     padding: '1rem 1.5rem',
     fontFamily: 'Lexend Deca, sans-serif',
@@ -11,8 +15,8 @@ const Button = ({ href, buttonName, style }) => {
   }
 
   return (
-    <div style={{ ...componentStyle, ...style }}>
-      <a href={href} target='_blank' rel='noreferrer' >
+    <div style={{ ...componentStyle, ...style, ...styling }} onClick={handleClick}>
+      <a style={styling} href={href} target='_blank' rel='noreferrer' >
         {buttonName}
       </a>
     </div>
