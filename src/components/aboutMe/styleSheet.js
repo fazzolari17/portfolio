@@ -7,7 +7,7 @@ const style = {
   flex: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   flexCenter: {
     display: 'flex',
@@ -27,8 +27,19 @@ const style = {
     flexDirection: 'column',
     alignItems: 'center',
   },
+  imgWrapper: {
+    overflow: 'hidden',
+    width: '150px',
+    height: '300px',
+  },
   heroImg: {
-    borderRadius: '5px'
+    width: '100%',
+    height: '100%',
+    borderRadius: '5px',
+    objectFit: 'cover',
+    objectPosition: '25% 20px',
+    transform: 'scale(1.85)'
+
   },
   heroH1: {
     marginTop: '1rem',
@@ -46,6 +57,9 @@ const style = {
   },
   certificationTitle: {
      marginBottom: '1rem' 
+  },
+  sectionWidth: {
+    width: '100vw',
   },
   certificationImg: {
     width: '70%',
