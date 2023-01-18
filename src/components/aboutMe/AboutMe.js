@@ -1,19 +1,16 @@
-// import mainImage from '../../images/american-digger.giuseppe-savage.jpg';
-import { Link } from 'react-router-dom';
 import style from './styleSheet';
-import s from '../projects/styleSheet';
-import Hero from './Hero';
-import Section from './Section';
+import Carousel from '../Carousel';
+import Section from '../Section';
 import Card from '../Card';
+import Hero from './Hero';
 import { uppercase } from '../../util/helperFunctions';
 import certifications from '../../data/certifications';
-import Carousel from '../Carousel';
 
 const AboutMe = () => {
   const numberOfCertifications = 8;
 
   const renderCertifications = certifications.map(({ certificationUrl, image, altText, id }) => (
-    <div style={s.flexCenter}>
+    <div style={style.flexCenter}>
       <h2 style={style.certificationTitle}>{uppercase('certifications')}</h2>
       <a style={style.flexCenter} href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
           <img style={style.certificationImg} src={image} alt={altText} />
