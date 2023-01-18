@@ -36,17 +36,12 @@ const Carousel = ({ slide, style }) => {
     flexDirection: 'column',
   },
   main: {
-    width: '950px',
-    height: '500px'
-  },
-  img: {
-    width: '80%',
-    height: 'auto',
-    backgroundColor: 'teal'
+    width: '90%',
+    height: 'auto'
   },
   imageContainer: {
-    width: '800px',
-    height: 'auto',
+    // width: '80%',
+    // height: 'auto',
   },
   outline: {
     backgroundColor: '#395E66',
@@ -64,8 +59,7 @@ const Carousel = ({ slide, style }) => {
   return ( 
     <section>
       <div
-        // style={{ ...s.flex, ...style }}
-        style={{ ...s.main, ...s.outline, ...s.flex }}
+        style={{ ...s.main, ...s.outline, ...s.flex, maxWidth: '75%', maxHeight: 'auto' }}
       >
         <BsArrowLeftCircleFill style={s.cursor} size={75} color={'white'} onClick={scrollLeft} />
         {slideToShow}
