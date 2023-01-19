@@ -10,11 +10,11 @@ let projects = [
   {
     name: 'Patient Diagnoses App',
     gitHub: 'https://github.com/fazzolari17/Patientor',
-    hostedUrl: 'https://63c3839cf1d1ec08e617a8b6--profound-mermaid-ce6032.netlify.app/',
+    hostedUrl: 'https://patientor-ccvj.onrender.com/',
     image: patientorApp,
     language: 'typescript',
     id: uuid(),
-    description: `This was my first TypeScript app. `,
+    description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added.`,
 },
 {
     name: 'random quote machine',

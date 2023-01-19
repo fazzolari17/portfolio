@@ -4,6 +4,10 @@ const quotes = [
     author: 'Unknown'
   },
   {
+    text: 'Talk is cheap. Show me the code.',
+    author: 'Linus Torvalds'
+  },
+  {
     text: 'Always code as if the guy who ends up maintaning your code will be a violent psychopath who knows where you live.',
     author: 'Rick Obborne'
   },
@@ -52,7 +56,7 @@ const quotes = [
     author: 'Vidiu Platon'
   },
   {
-    text: 'Software undergoes beta testing shortly before iy\' released.Beta is latin for "still doesn\'t work"',
+    text: 'Software undergoes beta testing shortly before it\'s released. Beta is latin for "still doesn\'t work"',
     author: 'Unknown'
   },
   {
@@ -100,10 +104,6 @@ const quotes = [
     author: 'William Laeder'
   },
   {
-    text: 'Talk is cheap.Show me the code.',
-    author: 'Linus Torvalds'
-  },
-  {
     text: 'Everybody in this country should learn to program a computer because it teaches you how to think.',
     author: 'Steve Jobs'
   },
@@ -135,6 +135,82 @@ const quotes = [
       <h3 style={{ marginLeft: 'rem', marginTop: '.25rem' }}>{'}'}</h3>
     </>,
     author: 'Unknown'
+  },
+  {
+    text: 'The function of a good software is to make the complex appear to be simple.',
+    author: 'Grady Booch'
+  },
+  {
+    text: 'Your most unhappy customers are your greatest source of learning.',
+    author: 'Bill Gates'
+  },
+  {
+    text: 'Small minds are concerned with the extraordinary, great minds with the ordinary.',
+    author: 'Blaise Pascal'
+  },
+  {
+    text: 'Everyday life is like programming, I guess. If you love something you can put beauty on it.',
+    author: 'Donald Knuth'
+  },
+  {
+    text: 'You are not responsible for the programming you picked up in childhood. However, as an adult, you are the one hundred percent responsible for fixing it.',
+    author: 'Unknown'
+  },
+  {
+    text: 'Developer is an organism that turns coffee into code.',
+    author: 'Unknown'
+  },
+  {
+    text: 'The purpose of software engineering is to control complexity, not to create it.',
+    author: 'Unknown'
+  },
+  {
+    text: 'As a programmer, it is your job to put yourself out of business. What you do today can be automated tomorrow.',
+    author: 'Doug Mcllroy'
+  },
+  {
+    text: 'A good programmer is someone who always looks both ways before crossing a one-way street.',
+    author: 'Doug Linder'
+  },
+  {
+    text: 'Testing can only prove the presence of bugs, not their absence. ',
+    author: 'Edsger W. Dijkstra'
+  },
+  {
+    text: 'Experience is the name everyone gives to their mistakes.',
+    author: 'Oscar Wilde'
+  },
+  {
+    text: 'Code is like humor. When you have to explain it, it’s bad.',
+    author: 'Cory House'
+  },
+  {
+    text: 'Fix the cause, not the symptom.',
+    author: 'Steve Maguire'
+  },
+  {
+    text: 'Before software can be reusable it first has to be usable',
+    author: 'Ralph Johnson'
+  },
+  {
+    text: 'Make it work, make it right, make it fast.',
+    author: 'Kent Beck'
+  },
+  {
+    text: 'There is a big difference between making a simple product & making a product simple. ',
+    author: 'Des Traynor'
+  },
+  {
+    text: 'In programming, the hard part isn\'t solving problems, but deciding what problems to solve.',
+    author: 'Paul Graham'
+  },
+  {
+    text: 'No one in the brief history of computing has ever written a piece of perfect software. It\'s unlikely that you\'ll be the first.',
+    author: 'Andy Hunt'
+  },
+  {
+    text: 'Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime',
+    author: 'David Leinweber'
   },
 ]
 

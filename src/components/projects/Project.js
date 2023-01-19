@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import style  from './styleSheet'; 
-import { capitalized, uppercase} from '../../util/helperFunctions';
+import { uppercase } from '../../util/helperFunctions';
 
 const Project = ({ title, imageSource, hostedUrl, id }) => {
  

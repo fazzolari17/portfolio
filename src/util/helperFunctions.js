@@ -49,8 +49,6 @@ export const selectImageClass = index => {
 }
   
 export const selectRandomQuote = (quotes) => {
-  console.log(quotes)
   const index = Math.floor(Math.random() * quotes.length);
-console.log(index)
   return quotes[index];
 }
