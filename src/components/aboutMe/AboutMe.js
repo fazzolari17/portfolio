@@ -5,9 +5,9 @@ import Card from '../Card';
 import Hero from './Hero';
 import { uppercase } from '../../util/helperFunctions';
 import certifications from '../../data/certifications';
+import aboutMe from '../../data/aboutme';
 
 const AboutMe = () => {
-  const numberOfCertifications = 8;
 
   const renderCertifications = certifications.map(({ certificationUrl, image, altText, id }) => (
     <div style={style.flexCenter}>
@@ -17,41 +17,34 @@ const AboutMe = () => {
         </a>
     </div>
   ))
+  
+  const half = Math.floor(aboutMe.languages.length / 2);
+  const leftList = aboutMe.languages.filter((lang, i) => i<half)
+  const rightList = aboutMe.languages.filter((lang, i) => i > half);
+
+  const renderLeftList = leftList.map((lang, i) => <li key={`${lang}${i}`}>{lang}</li>) ;
+  const renderRightList = rightList.map((lang, i) => (<li key={`${lang}${i}`}>{lang}</li>));
+
 
   return (
     <section className='sectionMargin'>
       <Hero />
       <Section invert={true}>
         <Card invert={true} style={{maxWidth: '600px'}}>
-        <p>
-           {` I'm an avid hiker, biker, backcountry camper, and hanger(Hammocking). I Love all things outdoors, and have a passion for learning. I have an analytical mind and shine when I am problem solving. I am happiest when I am creating something. I have a very diverse career background that has left me with a very unique and large skill set. I have multiple(${numberOfCertifications} at the moment) certifications in tech related fields. My current experience includes REST API, MERN, CRUD, CI/CD, TDD. Plus, I can read the shit out of documentation! `}
+          <p>
+            {aboutMe.description}
           </p>
           <div style={style.listContainer}>
             <div>
               <ul>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>Git</li>
-                <li>React</li>
-                <li>Node</li>
-                <li>React Native</li>
-                <li>Mongo Db</li>
-                <li>Express</li>
-           
-                <li>SQL</li>
+                {renderLeftList}
               </ul>
             </div>
             <div>
               <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Jest</li>
-                <li>Mocha</li>
-                <li>Cypress E2E</li>
-            
+                {renderRightList}
               </ul>
             </div>
-
           </div>
         </Card>
       </Section>

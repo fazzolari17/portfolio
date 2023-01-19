@@ -8,16 +8,16 @@ import {
 import Card from '../Card';
 import quotes from '../../data/homePageComments';
 import style from './styleSheet';
+// import Button from '../Button';
 
 const Home = () => {
   const [images, setImages] = React.useState(fallbackImages);
-  const [quoteToDisplay, setQuoteToDisplay] = React.useState(selectRandomQuote(quotes));
+  const [quoteToDisplay, setQuoteToDisplay] = React.useState(quotes[1]);
   
   const unSplashApiKey = process.env.REACT_APP_API_KEY_TWO;
   const searchQuery = 'nature';
-
-  const quoteIntervalTime = 10000;
   
+  const quoteIntervalTime = 10000;
   
   React.useEffect(() => {
     const fetchImages = async () => {
@@ -30,17 +30,19 @@ const Home = () => {
         setImages(fallbackImages);
       }
     }
-    // fetchImages()
+    fetchImages()
   }, [])
 
   let renderPhotos = images.map((photo, index) => {
     return <img key={photo.id} className={selectImageClass(index)} src={photo.urls.small} alt={photo.alt_description} />
   })
 
-  setInterval(() => {
+  // const changeQuote = () => {
+  //   setQuoteToDisplay(selectRandomQuote(quotes));
+  // }
+    setInterval(() => {
     setQuoteToDisplay(selectRandomQuote(quotes));
   }, quoteIntervalTime);
-
   
   return (
     <>
@@ -51,6 +53,7 @@ const Home = () => {
         <Card style={style.quoteCard}>
           {quoteToDisplay.text}
           <div style={style.quoteAuthor}>{`- ${quoteToDisplay.author}`}</div>
+          {/* <Button style={{ alignSelf: 'flex-end', justifySelf: 'flex-end', marginTop: '1rem', color: 'var(--header-background, #071013)' }} invert={true} buttonName={'Next Quote'} handleClick={changeQuote} /> */}
         </Card>
       </div>
     </>
