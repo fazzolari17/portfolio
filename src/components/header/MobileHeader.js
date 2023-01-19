@@ -1,0 +1,45 @@
+import React from 'react';
+import {
+  Link,
+  useLocation
+} from 'react-router-dom';
+import style from './styleSheet';
+import { GiHamburgerMenu } from 'react-icons/gi'
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const loc = useLocation();
+  const home = '/';
+  const aboutMe = '/aboutMe';
+  const projects = '/projects';
+  const contact = '/contact';
+
+  
+
+  const addUnderlineToCurrentPage = (location, page) => {
+    if (location === page) return style.currentPage;
+    return style.link;
+  }
+
+  const slideMenu = isMenuOpen
+    ? { transform: 'translate(0)', transition: 'transform .5s ease-in-out'}
+    : { transform: 'translate(0, -100%)', transition: 'transform .5s ease-in-out' }
+
+  return (<>
+    <header style={style.header}>
+      <div>
+        <Link to={home}><div className="logo">G<span className="tilt">F</span></div></Link>
+      </div>
+      <GiHamburgerMenu style={{ cursor: 'pointer' }} id={'menuIcon'} size={50} onClick={() => setIsMenuOpen(state => !state)} />
+    </header>
+      <nav style={{...style.mobileNav, ...slideMenu}}>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, home)} to={home}>Home</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, aboutMe)} to={aboutMe}>About Me</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, projects)} to={projects}>Projects</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, contact)} to={contact}>Contact</Link>
+    </nav>
+  </>
+  )
+};
+
+export default Header;

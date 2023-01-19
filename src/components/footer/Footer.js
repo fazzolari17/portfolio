@@ -1,12 +1,17 @@
-// import './footer.css';
+import useViewport from '../../hooks/useViewport';
 import ContactIcons from '../contactIcons';
 import { style } from './styleSheet';
 
 const Footer = () => {
+  const { width } = useViewport();
+
+  const isMobile = width < 500 ? true : false;
+
+  const mobileStyle = isMobile ? style.mobileFooter : '';
 
   return (
     <footer style={style.footer}>
-      <div style={style.flex}>
+      <div style={{...style.flex, ...mobileStyle}}>
         <p style={style.marginRight}>
           Designed & Created By: Giuseppe Fazzolari ©
         </p>

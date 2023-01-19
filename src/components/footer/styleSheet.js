@@ -20,5 +20,9 @@
     },
     marginRight: {
       marginRight: '1rem'
+    },
+    mobileFooter: {
+      flexDirection: 'column-reverse',
+      transform: 'scale(.65)'
     }
   }

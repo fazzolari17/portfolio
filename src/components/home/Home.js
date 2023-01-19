@@ -8,12 +8,11 @@ import {
 import Card from '../Card';
 import quotes from '../../data/homePageComments';
 import style from './styleSheet';
-// import Button from '../Button';
 
 const Home = () => {
   const [images, setImages] = React.useState(fallbackImages);
   const [quoteToDisplay, setQuoteToDisplay] = React.useState(quotes[1]);
-  
+
   const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
   
@@ -30,7 +29,7 @@ const Home = () => {
         setImages(fallbackImages);
       }
     }
-    fetchImages()
+    // fetchImages()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -38,12 +37,13 @@ const Home = () => {
     return <img key={photo.id} className={selectImageClass(index)} src={photo.urls.small} alt={photo.alt_description} />
   })
 
-  // const changeQuote = () => {
-  //   setQuoteToDisplay(selectRandomQuote(quotes));
-  // }
-
   
-  setTimeout(function setQuote(){
+  setTimeout(function setQuote() {
+    let count = 0;
+    while (count < 100) {
+      clearTimeout();
+      count++;
+    }
     setQuoteToDisplay(selectRandomQuote(quotes));
     setTimeout(setQuote, quoteTimeoutTime);
   }, quoteTimeoutTime);
@@ -58,7 +58,6 @@ const Home = () => {
         <Card style={style.quoteCard}>
           {quoteToDisplay.text}
           <div style={style.quoteAuthor}>{`- ${quoteToDisplay.author}`}</div>
-          {/* <Button style={{ alignSelf: 'flex-end', justifySelf: 'flex-end', marginTop: '1rem', color: 'var(--header-background, #071013)' }} invert={true} buttonName={'Next Quote'} handleClick={changeQuote} /> */}
         </Card>
       </div>
     </>

@@ -6,21 +6,23 @@ import Projects from './components/projects/Projects';
 import AboutMe from './components/aboutMe/AboutMe';
 import Footer from './components/footer/Footer';
 import ProjectDetail from './components/projects/ProjectDetail';
+import MobileHeader from './components/header/MobileHeader';
 
 import {
   BrowserRouter as Router,
   Routes, Route
 } from 'react-router-dom';
 
-
+import useViewport from './hooks/useViewport';
 
 function App() {
-
+  const { width } = useViewport();
+  const isMobile = width < 500 ? true : false;
 
   return (
     <main>
       <Router>
-        <Header />
+        {isMobile ?  <MobileHeader /> : <Header />}
   
         <Routes>
           <Route path='/projects/:id' element={<ProjectDetail />} />
