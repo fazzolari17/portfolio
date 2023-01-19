@@ -17,7 +17,7 @@ const Home = () => {
   const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
   
-  const quoteIntervalTime = 10000;
+  const quoteTimeoutTime = 10000;
   
   React.useEffect(() => {
     const fetchImages = async () => {
@@ -40,9 +40,13 @@ const Home = () => {
   // const changeQuote = () => {
   //   setQuoteToDisplay(selectRandomQuote(quotes));
   // }
-    setInterval(() => {
+
+  
+  setTimeout(function setQuote(){
     setQuoteToDisplay(selectRandomQuote(quotes));
-  }, quoteIntervalTime);
+    setTimeout(setQuote, quoteTimeoutTime);
+  }, quoteTimeoutTime);
+
   
   return (
     <>
