@@ -14,7 +14,7 @@ const Home = () => {
   const [images, setImages] = React.useState(fallbackImages);
   const [quoteToDisplay, setQuoteToDisplay] = React.useState(quotes[1]);
   
-  const unSplashApiKey = process.env.REACT_APP_API_KEY_TWO;
+  const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
   
   const quoteIntervalTime = 10000;
