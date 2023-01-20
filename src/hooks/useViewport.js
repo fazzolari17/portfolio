@@ -1,16 +1,18 @@
 import React from 'react';
+import { breakpoint } from '../constants';
+import { viewportContext } from '../contexts/ViewportProvider';
 
 const useViewport = () => {
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [isMobile, setIsMobile] = React.useState(false)
+  const { width, height } = React.useContext(viewportContext);
 
   React.useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => window.removeEventListener('resize', handleWindowResize);
-  }, []);
-
-  return { width };
+    width < breakpoint ? setIsMobile(true) : setIsMobile(false);
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
+  return { width, height, isMobile };
 };
 
 export default useViewport;

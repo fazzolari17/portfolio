@@ -1,6 +1,6 @@
 import React from 'react';
 import Project from './Project';
-import projectData from '../../data/javascript';
+import projectData from '../../data/javascriptProjects';
 import Section from '../Section';
 import Carousel from '../Carousel';
 

@@ -10,11 +10,11 @@ let projects = [
   {
     name: 'Patient Diagnoses App',
     gitHub: 'https://github.com/fazzolari17/Patientor',
-    hostedUrl: 'https://patientor-ccvj.onrender.com/',
+    hostedUrl: 'https://patientor-frontend.onrender.com/',
     image: patientorApp,
     language: 'typescript',
     id: uuid(),
-    description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added.`,
+    description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added. Data that does not pass the validation tests in the form prevent the form from being submitted and display a message alerting the user to the incorrect and/or required fields.`,
 },
 {
     name: 'random quote machine',
@@ -41,7 +41,7 @@ let projects = [
   image: drumMachine,
   language: 'javascript',
   id:  uuid(),
-  description: 'Drum machine. Need I say more...? Make some noise!',
+  description: 'Drum machine. Need I say more...? Make some noise! This project focuses on using sound in an application and how to control the sounds as well as having multiple inputs for a sound (mouse click and keyboard selection). Not a terribly complex project but fun and work with audio.',
 },
 {
   name: 'javascript calculator',
@@ -50,7 +50,7 @@ let projects = [
   image: calculator,
   language: 'javascript',
   id:  uuid(),
-  description: 'Calculator. I learned that JavaScript needs to be coaxed into doing the same math that the rest of the world does. No JavaScript 1 + 2 does not equal "12" 🤣! ',
+  description: 'Calculator. I learned that JavaScript needs to be coaxed into doing the same math that the rest of the world does. No JavaScript 1 + 2 does not equal "12" 🤣! This was a project that looks deceptively simple. The challenges of this projects include dealing with math in javascript, and ensuring that the results are correct at least to an acceptable range (multiple decimal points) for a simple calculator',
 },
 {
   name: 'pomodoro timer',
@@ -59,7 +59,7 @@ let projects = [
   image: pomodoroTimer,
   language: 'javascript',
   id:  uuid(),
-  description: 'This app showcased keeping accurate time and the time drift that occurs with a setTimeout() or setInterval() as a timekeeper. Although seemingly innocuous losing a few milliseconds every iteration of a setTimeout() or setInterval() leads to a very innacurate clock, rather quickly,  if not handled.',
+  description: 'This app showcased keeping accurate time and the time drift that occurs with a setTimeout() or setInterval() as a timekeeper. Although seemingly innocuous losing a few milliseconds every iteration of a setTimeout() or setInterval() leads to a very innacurate clock, rather quickly,  if not handled. This was a fun project and I learned a lot about keeping time and continually updating a component without triggering a rerendering of multiple unintended components, in React, while managing state.',
 },
 
 ]

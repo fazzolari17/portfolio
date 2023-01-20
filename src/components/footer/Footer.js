@@ -3,9 +3,7 @@ import ContactIcons from '../contactIcons';
 import { style } from './styleSheet';
 
 const Footer = () => {
-  const { width } = useViewport();
-
-  const isMobile = width < 500 ? true : false;
+  const { isMobile } = useViewport();
 
   const mobileStyle = isMobile ? style.mobileFooter : '';
 

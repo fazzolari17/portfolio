@@ -1,9 +1,12 @@
 import React from 'react';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
+import useViewport from '../hooks/useViewport';
 
 const Carousel = ({ slide, style }) => {
   const [count, setCount] = React.useState(0);
   const [slides,] = React.useState(slide);
+
+  const { width } = useViewport();
   
   const slideToShow = slides.find((item, index) => index === count);
 
@@ -54,16 +57,27 @@ const Carousel = ({ slide, style }) => {
   cursor: {
     cursor: 'pointer',
   }
-};
+  };
+  
+  const mobileStyle = width < 561 ? { transform: 'scale(2.5)' } : '';
+  const removePadding = width < 561 ? { padding: '0 1rem 2rem 1rem' } : '';
 
   return ( 
     <section>
       <div
-        style={{ ...s.main, ...s.outline, ...s.flex, maxWidth: '75%', maxHeight: 'auto' }}
+        style={{
+          ...s.main,
+          ...s.outline,
+          ...s.flex,
+          maxWidth: '75%',
+          maxHeight: 'auto',
+          ...removePadding
+        }}
+      
       >
-        <BsArrowLeftCircleFill style={s.cursor} size={75} color={'white'} onClick={scrollLeft} />
+        <BsArrowLeftCircleFill style={{...s.cursor, ...mobileStyle}} size={75} color={'white'} onClick={scrollLeft} />
         {slideToShow}
-        <BsArrowRightCircleFill style={s.cursor} size={75} color={'white'} onClick={scrollRight} />
+        <BsArrowRightCircleFill style={{...s.cursor, ...mobileStyle}} size={75} color={'white'} onClick={scrollRight} />
       </div>
     </section>
   )

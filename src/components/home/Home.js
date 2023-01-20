@@ -11,7 +11,7 @@ import style from './styleSheet';
 
 const Home = () => {
   const [images, setImages] = React.useState(fallbackImages);
-  const [quoteToDisplay, setQuoteToDisplay] = React.useState(quotes[1]);
+  const [quoteToDisplay, setQuoteToDisplay] = React.useState(selectRandomQuote());
 
   const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
@@ -29,7 +29,7 @@ const Home = () => {
         setImages(fallbackImages);
       }
     }
-    // fetchImages()
+    fetchImages()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

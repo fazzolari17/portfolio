@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 /**
  * Hook that alerts clicks outside of the passed ref
@@ -20,6 +20,7 @@ const useClickOutsideToCloseMenu = (ref, setIsMenuOpen) => {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 }
 

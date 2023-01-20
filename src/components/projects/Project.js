@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom';
-import style  from './styleSheet'; 
+import style from './styleSheet'; 
 import { uppercase } from '../../util/helperFunctions';
+import useViewport from '../../hooks/useViewport';
 
 const Project = ({ title, imageSource, hostedUrl, id }) => {
- 
+  const { width, isMobile } = useViewport();
 
+  const midBreakPoint = width < 561 ? { transform: 'scale(.75)' } : ''; 
+
+  const mobileStyles = isMobile ? {...style.mobileStyles} : '';
+  
+  const mobileStylesFlex = isMobile ? {...style.mobileStylesFlex} : '';
 
   return (
-    <div style={style.flexCenter}>
-      <h2 style={{...style.marginBottom, color: 'var(--header-text, #F0F8FF)'}}>{uppercase(title)}</h2>
+    <div style={{...style.flexCenter, ...mobileStylesFlex}}>
+      <h2 style={{ ...style.projectTitle,  ...mobileStyles, ...midBreakPoint }}>{uppercase(title)}</h2>
       <Link style={style.flexCenter} to={`/projects/${id}`}>
         <img style={style.img} src={imageSource} alt='screenshot of project' />
       </Link>

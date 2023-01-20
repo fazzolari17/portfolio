@@ -20,7 +20,8 @@ const style = {
     height: 'auto',
   },
   imageContainer: {
-    width: '800px',
+    maxWidth: '800px',
+    width: '100%',
     height: 'auto',
   },
   outline: {
@@ -45,16 +46,17 @@ const style = {
     cursor: 'pointer',
   },
   marginBottom: {
-    marginBottom: '1rem'
   },
   projectTitle: {
     textAlign: 'center',
     marginTop: '1rem',
-    // color: 'var(--header-text, #F0F8FF)'
+    marginBottom: '1rem',
+    color: 'var(--header-text, #F0F8FF)'
   },
   cardWidth: {
-    width: '800px'
-  }
+    width: '100%',
+    maxWidth: '800px'
+  },
 };
 
 export default style;

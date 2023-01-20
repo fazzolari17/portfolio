@@ -1,6 +1,7 @@
 import ContactIcons from '../contactIcons';
 import Card from '../Card';
 import style from './styleSheet';
+import { contact } from '../../data/contact';
 
 // UNCOMMENT WHEN BACKEND FUNTIONALITY IS WORKING 
 // import ContactForm from './ContactForm';
@@ -11,9 +12,7 @@ const Contact = () => {
     <section className='sectionMargin'>
       <Card>
         <p style={style.marginBottom}>
-          Let's collaborate <br />
-          Browse my gitHub repositories, or check out my linkedIn page. <br/>
-          Send me an email or message me on linkedIn! 
+          {contact.info}
         </p>
         <div className='flex' >
           <ContactIcons style={style.marginRight} size={'2.5rem'} color={'var(--header-background, #071013)'} />

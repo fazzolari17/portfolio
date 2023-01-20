@@ -1,13 +1,18 @@
 import style from './styleSheet';
 import { useParams } from 'react-router-dom';
-import projectData from '../../data/javascript';
 import { capitalized } from '../../util/helperFunctions';
+import projectData from '../../data/javascriptProjects';
 
 import Card from '../Card';
 import Button from '../Button';
+import useViewport from '../../hooks/useViewport';
+import { breakpoint } from '../../constants';
 
 const ProjectDetail = () => {
   const parameterId = useParams().id;
+  const { width } = useViewport();
+  
+  const mobileStyle = width < breakpoint ? {} : '';
 
   const { name, gitHub, hostedUrl, image, description } = projectData.find(({id}) => id === parameterId);
 
@@ -16,13 +21,13 @@ const ProjectDetail = () => {
     <section className='sectionMargin'>
       <h1 style={style.projectTitle}>{capitalized(name)}</h1>
 
-      <Card>
+      <Card style={mobileStyle}>
         <a href={hostedUrl} target='_blank' rel='noreferrer'>
           <img style={style.imageContainer} src={image} alt={`screenshot of the ${name} project`} />
         </a>
       </Card>
 
-      <Card >
+      <Card style={mobileStyle}>
         <p style={style.cardWidth}>
         {description}
         </p>

@@ -56,7 +56,8 @@ const style = {
     justifyContent: 'space-around'
   },
   certificationTitle: {
-     marginBottom: '1rem' 
+    margin: '.5rem 0 1rem 0',
+    color: 'var(--header-text, #F0F8FF)'
   },
   sectionWidth: {
     width: '100vw',
@@ -64,6 +65,15 @@ const style = {
   certificationImg: {
     width: '70%',
     height: 'auto'
+  },
+  mobileStyles: {
+    transform: 'scale(.5)',
+    margin: 'none',
+    padding: 'none'
+  },
+  mobileStylesFlex: {
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   }
 };
 

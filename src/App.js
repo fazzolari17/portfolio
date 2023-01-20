@@ -16,8 +16,7 @@ import {
 import useViewport from './hooks/useViewport';
 
 function App() {
-  const { width } = useViewport();
-  const isMobile = width < 500 ? true : false;
+  const { isMobile } = useViewport();
 
   return (
     <main>
