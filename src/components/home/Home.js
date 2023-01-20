@@ -11,7 +11,7 @@ import style from './styleSheet';
 
 const Home = () => {
   const [images, setImages] = React.useState(fallbackImages);
-  const [quoteToDisplay, setQuoteToDisplay] = React.useState(selectRandomQuote());
+  const [quoteToDisplay, setQuoteToDisplay] = React.useState(selectRandomQuote(quotes));
 
   const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
