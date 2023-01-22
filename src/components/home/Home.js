@@ -15,13 +15,14 @@ const Home = () => {
 
   const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
+  const unSplashUri = `https://api.unsplash.com/photos/random?orientation=landscape&query=${searchQuery}&count=30&client_id=${unSplashApiKey}`
   
   const quoteTimeoutTime = 10000;
   
   React.useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get(`https://api.unsplash.com/photos/random?orientation=landscape&query=${searchQuery}&count=30&client_id=${unSplashApiKey}`).catch(error => console.error(error));
+        const response = await axios.get(unSplashUri);
         const data = response.data;
         setImages(data);
       } catch (error) {
@@ -30,7 +31,14 @@ const Home = () => {
       }
     }
     fetchImages()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    setTimeout(function setQuote() {
+      setQuoteToDisplay(selectRandomQuote(quotes));
+      clearTimeout();
+      setTimeout(setQuote, quoteTimeoutTime);
+    }, quoteTimeoutTime);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   let renderPhotos = images.map((photo, index) => {
@@ -38,17 +46,8 @@ const Home = () => {
   })
 
   
-  setTimeout(function setQuote() {
-    let count = 0;
-    while (count < 100) {
-      clearTimeout();
-      count++;
-    }
-    setQuoteToDisplay(selectRandomQuote(quotes));
-    setTimeout(setQuote, quoteTimeoutTime);
-  }, quoteTimeoutTime);
 
-  
+
   return (
     <>
       <div className='gallery'>
