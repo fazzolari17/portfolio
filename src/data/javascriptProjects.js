@@ -15,7 +15,7 @@ let projects = [
     image: patientorApp,
     language: 'typescript',
     id: uuid(),
-    description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added. Data that does not pass the validation tests in the form prevent the form from being submitted and display a message alerting the user to the incorrect and/or required fields.`,
+    description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added. Data that does not pass the validation tests in the form prevent the form from being submitted and display a message alerting the user to the incorrect and/or required fields. Sometimes it takes a minute to populate the data on this app, I guess that is due to me hosting the backend on a free service. It will populate with the existing data and allow you to add additional data in about a min.`,
 },
   {
     name: 'Repository Rating App',
@@ -24,7 +24,7 @@ let projects = [
     image: reactNativeApp,
     language: 'react native',
     id: uuid(),
-    description: `A repository rating app written in react native. The repositories are able to be filtered and searched. Users can sign up, and once they sign in they are able rate the repositories and comment them. In order to demo this app you will have to have expo installed. The setup instructions will be in the README file.`,
+    description: `A repository rating app written in react native. The repositories are able to be filtered and searched. Users can sign up, and once they sign in they are able rate the repositories and comment them. In order to demo this app you will have to tun it locally. I have not found an easy or free way to host this online yet. The setup instructions will be in the README file.`,
 },
 {
     name: 'random quote machine',
@@ -42,7 +42,7 @@ let projects = [
   image: markdownPreviewer,
   language: 'javascript',
   id:  uuid(),
-  description: `This was another early application that was made to for the front-end certificate. The hamburger icon in the corner of the demo page will reveal the test suite that I needed to satisfy in order to pass the exercise. Select the hamburger icon and select the markdown previewer to run the test suite and see the tests. Not necessarily my best work but I chose to show these to detail my progression. The goal is to be "better than I was yesterday".`,
+  description: `This was another one of my early applications with react.`,
 },
 {
   name: 'drum machine',
@@ -60,7 +60,7 @@ let projects = [
   image: calculator,
   language: 'javascript',
   id:  uuid(),
-  description: 'Calculator. I learned that JavaScript needs to be coaxed into doing the same math that the rest of the world does. No JavaScript 1 + 2 does not equal "12" 🤣! This was a project that looks deceptively simple. The challenges of this projects include dealing with math in javascript, and ensuring that the results are correct at least to an acceptable range (multiple decimal points) for a simple calculator',
+  description: 'Calculator. I learned that JavaScript needs to be coaxed into doing the same math that the rest of the world does.  No JavaScript 1 + 2 does not equal "12" 🤣! This was a project that looks deceptively simple. The challenges of this projects include dealing with math in javascript, and ensuring that the results are correct at least to an acceptable range (multiple decimal points) for a simple calculator',
 },
 {
   name: 'pomodoro timer',
