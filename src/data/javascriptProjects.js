@@ -5,6 +5,7 @@ import drumMachine from '../images/drumMachine.png';
 import calculator from '../images/javascriptCalculator.png';
 import pomodoroTimer from '../images/pomodoroTimer.png';
 import patientorApp from '../images/patientorApp.png';
+import reactNativeApp from '../images/reactNativeApp.png'
 
 let projects = [
   {
@@ -15,6 +16,15 @@ let projects = [
     language: 'typescript',
     id: uuid(),
     description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added. Data that does not pass the validation tests in the form prevent the form from being submitted and display a message alerting the user to the incorrect and/or required fields.`,
+},
+  {
+    name: 'Repository Rating App',
+    gitHub: 'https://github.com/fazzolari17/rate-repository-app',
+    hostedUrl: 'https://github.com/fazzolari17/rate-repository-app',
+    image: reactNativeApp,
+    language: 'react native',
+    id: uuid(),
+    description: `A repository rating app written in react native. The repositories are able to be filtered and searched. Users can sign up, and once they sign in they are able rate the repositories and comment them. In order to demo this app you will have to have expo installed. The setup instructions will be in the README file.`,
 },
 {
     name: 'random quote machine',
