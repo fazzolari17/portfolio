@@ -10,18 +10,18 @@ const useClickOutsideToCloseMenu = (ref, setIsMenuOpen) => {
      */
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
-        setIsMenuOpen(state => !state)
+        setIsMenuOpen(state => !state);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
-}
+};
 
 export default useClickOutsideToCloseMenu;

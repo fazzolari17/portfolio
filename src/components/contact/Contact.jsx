@@ -1,13 +1,14 @@
-import ContactIcons from '../contactIcons';
+import ContactIcons from '../ContactIcons';
 import Card from '../Card';
 import style from './styleSheet';
 import { contact } from '../../data/contact';
+import React from 'react';
 
-// UNCOMMENT WHEN BACKEND FUNTIONALITY IS WORKING 
+// UNCOMMENT WHEN BACKEND FUNTIONALITY IS WORKING
 // import ContactForm from './ContactForm';
 
 const Contact = () => {
-  
+
   return (
     <section className='sectionMargin'>
       <Card>
@@ -18,7 +19,7 @@ const Contact = () => {
           <ContactIcons style={style.marginRight} size={'2.5rem'} color={'var(--header-background, #071013)'} />
         </div>
       </Card>
-      
+
       {/* REMOVE COMMENTS WHEN BACKEND IS WIRED UP TO ACCEPT THE INPUT */}
 
       {/* <Card style={{ maxWidth: '570px', marginTop: '3rem' }}>
@@ -27,7 +28,7 @@ const Contact = () => {
       </Card> */}
 
     </section>
-  )
+  );
 };
 
 export default Contact;

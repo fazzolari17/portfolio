@@ -48,7 +48,7 @@ const style = {
   heroP: {
     color: 'var(--hero-secondaryText, #C1AE7C)',
     fontFamily: 'Ubuntu sans-serif',
-  }, 
+  },
   listContainer: {
     marginTop: '1rem',
     display: 'flex',

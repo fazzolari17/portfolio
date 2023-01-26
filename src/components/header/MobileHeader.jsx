@@ -42,10 +42,10 @@ const Header = () => {
     </header>
 
     <nav style={{...style.mobileNav, ...slideMenu}}>
-      <Link style={addUnderlineToCurrentPage(loc.pathname, home)} to={home}>Home</Link>
-      <Link style={addUnderlineToCurrentPage(loc.pathname, aboutMe)} to={aboutMe}>About Me</Link>
-      <Link style={addUnderlineToCurrentPage(loc.pathname, projects)} to={projects}>Projects</Link>
-      <Link style={addUnderlineToCurrentPage(loc.pathname, contact)} to={contact}>Contact</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, home)} to={home} onClick={() => setIsMenuOpen(false)}>Home</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, aboutMe)} to={aboutMe} onClick={() => setIsMenuOpen(false)}>About Me</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, projects)} to={projects} onClick={() => setIsMenuOpen(false)}>Projects</Link>
+      <Link style={addUnderlineToCurrentPage(loc.pathname, contact)} to={contact} onClick={() => setIsMenuOpen(false)}>Contact</Link>
     </nav>
   </div>
   )

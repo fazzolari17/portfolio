@@ -6,7 +6,7 @@ export const capitalized = (string) => {
     let endOfWord = word.slice(1);
     let caps = [...cap, ...endOfWord];
     return caps.join('');
-  })
+  });
 
   return capitalizedWords.join(' ');
 };
@@ -18,37 +18,37 @@ export const uppercase = string => {
 
   while (count < string.length) {
     capitalized.push(string[count].toUpperCase());
-    count++
-  };
-  
+    count++;
+  }
+
   capitalized.join('');
   return capitalized;
 
 };
 
 export const selectImageClass = index => {
-      if (index % 2 === 0) {
-        index = 2
-      }
-      else if (index % 3 === 0) { 
-        index = 2
-      }
-    
-    switch (index) {
-      case 1:
-        index = 'span-1';
-        break;
-      case 2:
-        index = 'span-2';
-        break;
-      default:
-        index = 'item--1';
-    };
-    
-    return index;
-}
-  
+  if (index % 2 === 0) {
+    index = 2;
+  }
+  else if (index % 3 === 0) {
+    index = 2;
+  }
+
+  switch (index) {
+  case 1:
+    index = 'span-1';
+    break;
+  case 2:
+    index = 'span-2';
+    break;
+  default:
+    index = 'item--1';
+  }
+
+  return index;
+};
+
 export const selectRandomQuote = (quotes) => {
   const index = Math.floor(Math.random() * quotes.length);
   return quotes[index];
-}
+};

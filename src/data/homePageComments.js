@@ -1,3 +1,5 @@
+import React from 'react';
+
 const quotes = [
   {
     text: 'Real programmers don\'t comment their code. If it was hard to write, it should be hard to understand.',
@@ -52,7 +54,7 @@ const quotes = [
     author: 'Rajanand'
   },
   {
-    text: "I don't care if it works on your machine! We are not shipping your machine!",
+    text: 'I don\'t care if it works on your machine! We are not shipping your machine!',
     author: 'Vidiu Platon'
   },
   {
@@ -120,11 +122,11 @@ const quotes = [
     author: 'John Johnson'
   },
   {
-    text:  <><h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>IT WORKS!!</h4><h4>I LOVE PROGRAMMING</h4></>,
+    text: <><h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>IT WORKS!!</h4><h4>I LOVE PROGRAMMING</h4></>,
     author: 'John Johnson'
   },
   {
-    text:  <><h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>IT WORKS!!</h4><h4>I LOVE PROGRAMMING</h4></>,
+    text: <><h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>I HATE PROGRAMMING!</h4> <h4>IT WORKS!!</h4><h4>I LOVE PROGRAMMING</h4></>,
     author: 'John Johnson'
   },
   {
@@ -212,6 +214,6 @@ const quotes = [
     text: 'Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime',
     author: 'David Leinweber'
   },
-]
+];
 
 export default quotes;

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
 
@@ -8,7 +9,7 @@ const ContactForm = () => {
   const validation = values => {
     const errors = {};
     if (!values.message) {
-      errors.message = 'Required'
+      errors.message = 'Required';
     } else if (!values.email) {
       errors.email = 'Required';
     } else if (
@@ -24,15 +25,15 @@ const ContactForm = () => {
     const name = event.name;
     const email = event.email;
     const message = event.message;
-console.log('clicked')
+
     const emailMessage = {
       name,
       email,
       message
     };
 
-    await axios.get(`${url}`)
-    await axios.post(url, emailMessage)
+    await axios.get(`${url}`);
+    await axios.post(url, emailMessage);
     // await fetch(url, {
     //   method: 'POST',
     //   body: JSON.stringify(emailMessage)
@@ -51,9 +52,9 @@ console.log('clicked')
       validate={validation}
       onSubmit={handleSubmit}
     >
-      {({ isValid, dirty, setFieldValue, setFieldTouched }) => {
+      {({ isValid, dirty, _setFieldValue, _setFieldTouched }) => {
         return (
-          <Form className='contactForm' style={{ color: 'white'}}>
+          <Form className='contactForm' style={{ color: 'white' }}>
             <Field
               style={{ display: 'block', marginBottom: '1rem', color: 'white' }}
               label='Name'
@@ -61,13 +62,13 @@ console.log('clicked')
               name='name'
             />
             <Field
-              style={{ display: 'block'}}
+              style={{ display: 'block' }}
               label='Email'
               placeholder='Your Email'
               name='email'
             />
             <Field
-              style={{ marginTop: '1rem'}}
+              style={{ marginTop: '1rem' }}
               as='textarea'
               cols='61'
               rows='10'
@@ -76,18 +77,18 @@ console.log('clicked')
               name='message'
             />
             <button
-              style={{float: 'right'}}
+              style={{ float: 'right' }}
               type='submit'
               disabled={!dirty || !isValid }
               onClick={handleSubmit}
             >
               Submit</button>
           </Form>
-        )
+        );
       }}
 
     </Formik>
-  )
+  );
 };
 
 export default ContactForm;
