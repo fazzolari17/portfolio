@@ -1,3 +1,4 @@
+import React from 'react';
 import style from './styleSheet';
 import { useParams } from 'react-router-dom';
 import { capitalized } from '../../util/helperFunctions';
@@ -11,10 +12,10 @@ import { breakpoint } from '../../constants';
 const ProjectDetail = () => {
   const parameterId = useParams().id;
   const { width } = useViewport();
-  
+
   const mobileStyle = width < breakpoint ? {} : '';
 
-  const { name, gitHub, hostedUrl, image, description } = projectData.find(({id}) => id === parameterId);
+  const { name, gitHub, hostedUrl, image, description } = projectData.find(({ id }) => id === parameterId);
 
 
   return (
@@ -29,7 +30,7 @@ const ProjectDetail = () => {
 
       <Card style={mobileStyle}>
         <p style={style.cardWidth}>
-        {description}
+          {description}
         </p>
       </Card>
 
@@ -40,7 +41,7 @@ const ProjectDetail = () => {
       </Card>
 
     </section>
-  )
+  );
 };
 
 export default ProjectDetail;

@@ -4,7 +4,7 @@ import {
   useLocation
 } from 'react-router-dom';
 import style from './styleSheet';
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu } from 'react-icons/gi';
 import useClickOutsideToCloseMenu from '../../hooks/useClickOutsideToCloseMenu';
 
 const Header = () => {
@@ -15,16 +15,16 @@ const Header = () => {
   const projects = '/projects';
   const contact = '/contact';
 
-  
+
 
   const addUnderlineToCurrentPage = (location, page) => {
     if (location === page) return style.currentPage;
     return style.link;
-  }
+  };
 
   const slideMenu = isMenuOpen
-    ? { transform: 'translate(0)', transition: 'transform .5s ease-in-out'}
-    : { transform: 'translate(0, -100%)', transition: 'transform .5s ease-in-out' }
+    ? { transform: 'translate(0)', transition: 'transform .5s ease-in-out' }
+    : { transform: 'translate(0, -100%)', transition: 'transform .5s ease-in-out' };
 
   const wrapperRef = React.useRef(null);
   useClickOutsideToCloseMenu(wrapperRef, setIsMenuOpen);
@@ -41,14 +41,14 @@ const Header = () => {
 
     </header>
 
-    <nav style={{...style.mobileNav, ...slideMenu}}>
+    <nav style={{ ...style.mobileNav, ...slideMenu }}>
       <Link style={addUnderlineToCurrentPage(loc.pathname, home)} to={home} onClick={() => setIsMenuOpen(false)}>Home</Link>
       <Link style={addUnderlineToCurrentPage(loc.pathname, aboutMe)} to={aboutMe} onClick={() => setIsMenuOpen(false)}>About Me</Link>
       <Link style={addUnderlineToCurrentPage(loc.pathname, projects)} to={projects} onClick={() => setIsMenuOpen(false)}>Projects</Link>
       <Link style={addUnderlineToCurrentPage(loc.pathname, contact)} to={contact} onClick={() => setIsMenuOpen(false)}>Contact</Link>
     </nav>
   </div>
-  )
+  );
 };
 
 export default Header;

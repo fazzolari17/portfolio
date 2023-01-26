@@ -1,3 +1,4 @@
+import React from 'react';
 import style from './styleSheet';
 import Carousel from '../Carousel';
 import Section from '../Section';
@@ -10,16 +11,16 @@ import aboutMe from '../../data/aboutme';
 const AboutMe = () => {
 
   const renderCertifications = certifications.map(({ certificationUrl, image, altText, id }) => (
-    <div style={style.flexCenter}>
+    <div key={id} style={style.flexCenter}>
       <h2 style={style.certificationTitle}>{uppercase('certifications')}</h2>
       <a style={style.flexCenter} href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
-          <img style={style.certificationImg} src={image} alt={altText} />
-        </a>
+        <img style={style.certificationImg} src={image} alt={altText} />
+      </a>
     </div>
-  ))
-  
+  ));
+
   const half = Math.floor(aboutMe.languages.length / 2);
-  const leftList = aboutMe.languages.filter((lang, i) => i<half)
+  const leftList = aboutMe.languages.filter((lang, i) => i < half);
   const rightList = aboutMe.languages.filter((lang, i) => i > half);
 
   const renderLeftList = leftList.map((lang, i) => <li key={`${lang}${i}`}>{lang}</li>) ;
@@ -30,7 +31,7 @@ const AboutMe = () => {
     <section className='sectionMargin'>
       <Hero />
       <Section invert={true}>
-        <Card invert={true} style={{maxWidth: '600px'}}>
+        <Card invert={true} style={{ maxWidth: '600px' }}>
           <p>
             {aboutMe.description}
           </p>
@@ -49,10 +50,10 @@ const AboutMe = () => {
         </Card>
       </Section>
       <Section invert={false}>
-          <Carousel slide={renderCertifications} />
+        <Carousel slide={renderCertifications} />
       </Section>
     </section>
-  )
+  );
 };
 
 export default AboutMe;

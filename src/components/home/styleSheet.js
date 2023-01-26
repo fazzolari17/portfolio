@@ -20,6 +20,6 @@ const styles = {
     justifySelf: 'flex-end',
     maxWidth: 'fit-content',
   }
-}
+};
 
 export default styles;

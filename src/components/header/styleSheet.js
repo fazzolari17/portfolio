@@ -9,7 +9,7 @@ const style = {
     textTransform: 'uppercase',
     color: 'var(--header-text, #F0F8FF)',
     backgroundColor: 'var(--header-background, #071013)',
-    display: 'flex', 
+    display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     position: 'fixed',
@@ -37,7 +37,7 @@ const style = {
     borderBottom: '2px solid #FFF'
   },
   mobileNav: {
-     fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Inter, sans-serif',
     fontWeight: '500',
     height: '150px',
     padding: '1em',
@@ -46,7 +46,7 @@ const style = {
     textTransform: 'uppercase',
     color: 'var(--header-text, #F0F8FF)',
     backgroundColor: 'var(--header-background, #071013)',
-    display: 'flex', 
+    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -60,6 +60,6 @@ const style = {
     transform: 'translate(0, -100%)',
     transition: 'transform .5s ease-in-out'
   }
-}
-  
+};
+
 export default style;

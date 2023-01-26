@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import style from './styleSheet';
 
@@ -8,12 +9,12 @@ const Header = () => {
   const projects = '/projects';
   const contact = '/contact';
 
-  
+
 
   const addUnderlineToCurrentPage = (location, page) => {
     if (location === page) return style.currentPage;
     return style.link;
-  }
+  };
 
   return (
     <header style={style.header}>
@@ -25,7 +26,7 @@ const Header = () => {
         <Link style={addUnderlineToCurrentPage(loc.pathname, contact)} to={contact}>Contact</Link>
       </nav>
     </header>
-  )
+  );
 };
 
 export default Header;

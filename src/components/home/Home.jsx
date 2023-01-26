@@ -15,10 +15,10 @@ const Home = () => {
 
   const unSplashApiKey = process.env.REACT_APP_API_KEY;
   const searchQuery = 'nature';
-  const unSplashUri = `https://api.unsplash.com/photos/random?orientation=landscape&query=${searchQuery}&count=30&client_id=${unSplashApiKey}`
-  
+  const unSplashUri = `https://api.unsplash.com/photos/random?orientation=landscape&query=${searchQuery}&count=30&client_id=${unSplashApiKey}`;
+
   const quoteTimeoutTime = 10000;
-  
+
   React.useEffect(() => {
     const fetchImages = async () => {
       try {
@@ -29,8 +29,8 @@ const Home = () => {
         console.log(error);
         setImages(fallbackImages);
       }
-    }
-    fetchImages()
+    };
+    fetchImages();
 
     setTimeout(function setQuote() {
       setQuoteToDisplay(selectRandomQuote(quotes));
@@ -39,13 +39,13 @@ const Home = () => {
     }, quoteTimeoutTime);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   let renderPhotos = images.map((photo, index) => {
-    return <img key={photo.id} className={selectImageClass(index)} src={photo.urls.small} alt={photo.alt_description} />
-  })
+    return <img key={photo.id} className={selectImageClass(index)} src={photo.urls.small} alt={photo.alt_description} />;
+  });
 
-  
+
 
 
   return (
@@ -60,7 +60,7 @@ const Home = () => {
         </Card>
       </div>
     </>
-  )
+  );
 };
 
 export default Home;
