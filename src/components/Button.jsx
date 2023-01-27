@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import React from 'react';
+
 const Button = ({ href, buttonName, style, handleClick, invert }) => {
 
   const styling = invert
@@ -22,6 +23,14 @@ const Button = ({ href, buttonName, style, handleClick, invert }) => {
     </a>
   </div>
   );
+};
+
+Button.propTypes = {
+  href: PropTypes.string,
+  buttonName: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  handleClick: PropTypes.func,
+  invert: PropTypes.bool
 };
 
 export default Button;

@@ -1,5 +1,6 @@
 import React from 'react';
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 const Card = ({ children, style, invert, className }) => {
 
   const background = invert ? 'var(--header-contrastColor, #75ABBC)' : 'var(--hero-background, #395E66)';
@@ -21,6 +22,13 @@ const Card = ({ children, style, invert, className }) => {
       {children}
     </section>
   );
+};
+
+Card.propTypes = {
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  children: PropTypes.node,
+  invert: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Card;

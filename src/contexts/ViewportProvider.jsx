@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const viewportContext = React.createContext({});
 
@@ -23,6 +23,10 @@ const ViewportProvider = ({ children }) => {
       {children}
     </viewportContext.Provider>
   );
+};
+
+ViewportProvider.propTypes = {
+  children: PropTypes.arrayOf([PropTypes.element])
 };
 
 export default ViewportProvider;

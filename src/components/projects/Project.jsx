@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './styleSheet';
@@ -22,6 +22,13 @@ const Project = ({ title, imageSource, _hostedUrl, id }) => {
       </Link>
     </div>
   );
+};
+
+Project.propTypes = {
+  title: PropTypes.string,
+  imageSource: PropTypes.string,
+  _hostedUrl: PropTypes.string,
+  id: PropTypes.string
 };
 
 export default Project;

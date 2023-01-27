@@ -1,5 +1,5 @@
 import React from 'react';
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -25,6 +25,12 @@ const ContactIcons = ({ color, style, size }) => {
       </div>
     </IconContext.Provider>
   );
+};
+
+ContactIcons.propTypes = {
+  color: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  size: PropTypes.string
 };
 
 export default ContactIcons;

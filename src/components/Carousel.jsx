@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 import useViewport from '../hooks/useViewport';
 
@@ -83,6 +83,11 @@ const Carousel = ({ slide, style }) => {
       </div>
     </section>
   );
+};
+
+Carousel.propTypes = {
+  slide: PropTypes.arrayOf(PropTypes.element),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 export default Carousel;
