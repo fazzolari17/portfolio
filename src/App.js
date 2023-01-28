@@ -25,10 +25,10 @@ function App() {
         {isMobile ?  <MobileHeader /> : <Header />}
 
         <Routes>
-          <Route path='/projects/:id' element={<ProjectDetail />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/aboutMe' element={<AboutMe />} />
-          <Route path='/contact' element={<Contact/>} />
+          <Route path='/#/projects/:id' element={<ProjectDetail />} />
+          <Route path='/#/projects' element={<Projects />} />
+          <Route path='/#/aboutMe' element={<AboutMe />} />
+          <Route path='/#/contact' element={<Contact/>} />
           <Route path='/' element={<Home />} />
         </Routes>
 
