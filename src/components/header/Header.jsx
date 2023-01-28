@@ -5,9 +5,9 @@ import style from './styleSheet';
 const Header = () => {
   const loc = useLocation();
   const home = '/';
-  const aboutMe = '/aboutMe';
-  const projects = '/projects';
-  const contact = '/contact';
+  const aboutMe = '/#/aboutMe';
+  const projects = '/#/projects';
+  const contact = '/#/contact';
 
 
 
