@@ -11,9 +11,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const loc = useLocation();
   const home = '/';
-  const aboutMe = '/#/aboutMe';
-  const projects = '/#/projects';
-  const contact = '/#/contact';
+  const aboutMe = '/aboutMe';
+  const projects = '/projects';
+  const contact = '/contact';
 
 
 
