@@ -19,12 +19,30 @@ const AboutMe = () => {
     </div>
   ));
 
-  const half = Math.floor(aboutMe.languages.length / 2);
-  const leftList = aboutMe.languages.filter((lang, i) => i < half);
-  const rightList = aboutMe.languages.filter((lang, i) => i > half);
 
-  const renderLeftList = leftList.map((lang, i) => <li key={`${lang}${i}`}>{lang}</li>) ;
-  const renderRightList = rightList.map((lang, i) => (<li key={`${lang}${i}`}>{lang}</li>));
+  const renderListOfSkills = () => {
+    const half = Math.floor(aboutMe.languages.length / 2);
+    const leftList = aboutMe.languages.filter((lang, i) => i < half);
+    const rightList = aboutMe.languages.filter((lang, i) => i > half);
+
+    const renderLeftList = leftList.map((lang, i) => <li key={`${lang}${i}`}>{lang}</li>);
+    const renderRightList = rightList.map((lang, i) => (<li key={`${lang}${i}`}>{lang}</li>));
+
+    return (
+      <>
+        <div>
+          <ul>
+            {renderLeftList}
+          </ul>
+        </div>
+        <div>
+          <ul>
+            {renderRightList}
+          </ul>
+        </div>
+      </>
+    );
+  };
 
 
   return (
@@ -36,16 +54,7 @@ const AboutMe = () => {
             {aboutMe.description}
           </p>
           <div style={style.listContainer}>
-            <div>
-              <ul>
-                {renderLeftList}
-              </ul>
-            </div>
-            <div>
-              <ul>
-                {renderRightList}
-              </ul>
-            </div>
+            {renderListOfSkills()}
           </div>
         </Card>
       </Section>
