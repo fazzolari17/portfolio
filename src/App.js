@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/header/Header';
-import Home from './components/home/Home';
+import Home from './components/home/Index';
 import Contact from './components/contact/Contact';
 import Projects from './components/projects/Projects';
 import AboutMe from './components/aboutMe/AboutMe';
