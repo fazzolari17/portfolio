@@ -33,8 +33,8 @@ const style = {
     textDecoration: 'none',
     textTransform: 'uppercase',
     marginLeft: '2em',
-    color: '#F0F8FF',
-    borderBottom: '2px solid #FFF'
+    color: 'var(--header-text, #F0F8FF)',
+    borderBottom: '2px solid var(--header-text, #F0F8FF)'
   },
   mobileNav: {
     fontFamily: 'Inter, sans-serif',
@@ -56,7 +56,6 @@ const style = {
     width: '100vw',
     zIndex: '1',
     lineHeight: '1.6',
-    // transition: 'all .5s ease-in-out',
     transform: 'translate(0, -100%)',
     transition: 'transform .5s ease-in-out'
   }
