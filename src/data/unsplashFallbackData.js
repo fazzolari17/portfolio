@@ -2055,7 +2055,7 @@ const data = [
     'color': '#c0d9d9',
     'blur_hash': 'LMC@{Y~qiwtR?w%MjZaz*0%MozWC',
     'description': null,
-    'alt_description': null,
+    'alt_description': 'lake with mountain reflections',
     'urls': {
       'raw': 'https://images.unsplash.com/photo-1580137189272-c9379f8864fd?ixid=MnwzOTk5MDR8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzM5MjM3ODg&ixlib=rb-4.0.3',
       'full': 'https://images.unsplash.com/photo-1580137189272-c9379f8864fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzOTk5MDR8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzM5MjM3ODg&ixlib=rb-4.0.3&q=80',
