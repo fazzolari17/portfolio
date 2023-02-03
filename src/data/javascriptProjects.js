@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import quoteMachine from '../images/randomQuoteGenerator.png';
 import markdownPreviewer from '../images/markdownPreviewer.png';
 import drumMachine from '../images/drumMachine.png';
@@ -14,7 +13,7 @@ let projects = [
     hostedUrl: 'https://patientor-frontend.onrender.com/',
     image: patientorApp,
     language: 'typescript',
-    id: uuid(),
+    id: '045736a7-69ec-4c58-8161-c1f7a8a05772',
     description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added. Data that does not pass the validation tests in the form prevent the form from being submitted and display a message alerting the user to the incorrect and/or required fields. Sometimes it takes a minute to populate the data on this app, I guess that is due to me hosting the backend on a free service. It will populate with the existing data and allow you to add additional data in about a min.`,
   },
   {
@@ -23,7 +22,7 @@ let projects = [
     hostedUrl: 'https://github.com/fazzolari17/rate-repository-app',
     image: reactNativeApp,
     language: 'react native',
-    id: uuid(),
+    id: '7d2ceb6e-5e5a-4260-89ae-da17829f3ae0',
     description: `A repository rating app written in react native. The repositories are able to be filtered and searched. Users can sign up, and once they sign in they are able rate the repositories and comment them. In order to demo this app you will have to tun it locally. I have not found an easy or free way to host this online yet. The setup instructions will be in the README file.`,
   },
   {
@@ -32,7 +31,7 @@ let projects = [
     hostedUrl: 'https://fazzolari17.github.io/projects/',
     image: quoteMachine,
     language: 'javascript',
-    id: uuid(),
+    id: '54cc6268-c01b-4621-80c4-1d2b3002e6d7',
     description: `One of my very first React Projects. This app was made in order to earn a certificate from Free Code Camp. This was a completely solo project helps to remind myself how far I have come. "Be Better Than You Were Yesterday"`,
   },
   {
@@ -41,7 +40,7 @@ let projects = [
     hostedUrl: 'https://flourishing-sundae-4007c6.netlify.app/',
     image: markdownPreviewer,
     language: 'javascript',
-    id: uuid(),
+    id: '3a6aec49-767f-4c21-ac63-304f30f913b9',
     description: `This was another one of my early applications with react.`,
   },
   {
@@ -50,7 +49,7 @@ let projects = [
     hostedUrl: 'https://keen-griffin-6351d2.netlify.app/',
     image: drumMachine,
     language: 'javascript',
-    id: uuid(),
+    id: '1ae704d4-d68b-49c6-b68d-319342f1fefb',
     description: 'Drum machine. Need I say more...? Make some noise! This project focuses on using sound in an application and how to control the sounds as well as having multiple inputs for a sound (mouse click and keyboard selection). Not a terribly complex project but fun and work with audio.',
   },
   {
@@ -59,7 +58,7 @@ let projects = [
     hostedUrl: 'https://warm-pudding-1be669.netlify.app/',
     image: calculator,
     language: 'javascript',
-    id: uuid(),
+    id: 'cd8537b1-d61b-4c68-9560-b01ca03df9aa',
     description: 'Calculator. I learned that JavaScript needs to be coaxed into doing the same math that the rest of the world does.  No JavaScript 1 + 2 does not equal "12" 🤣! This was a project that looks deceptively simple. The challenges of this projects include dealing with math in javascript, and ensuring that the results are correct at least to an acceptable range (multiple decimal points) for a simple calculator',
   },
   {
@@ -68,7 +67,7 @@ let projects = [
     hostedUrl: 'https://elaborate-klepon-8afe3a.netlify.app/',
     image: pomodoroTimer,
     language: 'javascript',
-    id: uuid(),
+    id: 'f2bbbaee-1f34-45df-8c2c-ce7ccac96cae',
     description: 'This app showcased keeping accurate time and the time drift that occurs with a setTimeout() or setInterval() as a timekeeper. Although seemingly innocuous losing a few milliseconds every iteration of a setTimeout() or setInterval() leads to a very innacurate clock, rather quickly,  if not handled. This was a fun project and I learned a lot about keeping time and continually updating a component without triggering a rerendering of multiple unintended components, in React, while managing state.',
   },
 
