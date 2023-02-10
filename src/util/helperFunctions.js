@@ -13,16 +13,16 @@ export const capitalized = (string) => {
 
 export const uppercase = string => {
   string = string.split('');
-  let capitalized = [];
+  let uppercase = [];
   let count = 0;
 
   while (count < string.length) {
-    capitalized.push(string[count].toUpperCase());
+    uppercase.push(string[count].toUpperCase());
     count++;
   }
 
-  capitalized.join('');
-  return capitalized;
+  uppercase = uppercase.join('');
+  return uppercase;
 
 };
 
@@ -42,7 +42,7 @@ export const selectImageClass = index => {
     index = 'span-2';
     break;
   default:
-    index = 'item--1';
+    index = 'span-1';
   }
 
   return index;
