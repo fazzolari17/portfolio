@@ -8,17 +8,18 @@ import useViewport from '../../hooks/useViewport';
 const Project = ({ title, imageSource, _hostedUrl, id }) => {
   const { width, isMobile } = useViewport();
 
-  const midBreakPoint = width < 561 ? { transform: 'scale(.75)' } : '';
+  const transformText = width < 561 ? { transform: 'scale(.75)' } : '';
 
-  const mobileStyles = isMobile ? { ...style.mobileStyles } : '';
+  const mobileStyles = isMobile ? { width: '100%' } : '';
 
-  const mobileStylesFlex = isMobile ? { ...style.mobileStylesFlex } : '';
+
+  const imageStyle = isMobile ? { ...style.mobileImg } : { ...style.img };
 
   return (
-    <div style={{ ...style.flexCenter, ...mobileStylesFlex }}>
-      <h2 style={{ ...style.projectTitle,  ...mobileStyles, ...midBreakPoint }}>{uppercase(title)}</h2>
-      <Link style={style.flexCenter} to={`/projects/${id}`}>
-        <img style={style.img} src={imageSource} alt='screenshot of project' />
+    <div style={{ ...style.flexCenter, ...mobileStyles }}>
+      <h2 style={{ ...style.projectTitle, ...transformText }}>{uppercase(title)}</h2>
+      <Link style={{ ...style.flexCenter }} to={`/projects/${id}`}>
+        <img style={imageStyle} src={imageSource} alt='screenshot of project' />
       </Link>
     </div>
   );

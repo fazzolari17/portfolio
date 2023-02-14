@@ -3,6 +3,7 @@ import Project from './Project';
 import projectData from '../../data/javascriptProjects';
 import Section from '../Section';
 import Carousel from '../Carousel';
+import { uppercase } from '../../util/helperFunctions';
 
 const Projects = () => {
   const [slides, ] = React.useState(
@@ -14,9 +15,14 @@ const Projects = () => {
 
 
   return (
-    <Section className='sectionMargin' invert={false}>
-      <Carousel slide={slides} />
-    </Section>
+    <div className='sectionMargin'>
+      <h1 style={{ textAlign: 'center' }}>
+        {uppercase('projects')}
+      </h1>
+      <Section  invert={false}>
+        <Carousel slide={slides} />
+      </Section>
+    </div>
   );
 };
 

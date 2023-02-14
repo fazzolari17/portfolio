@@ -8,6 +8,8 @@ import AboutMe from './components/aboutMe/AboutMe';
 import Footer from './components/footer/Footer';
 import ProjectDetail from './components/projects/ProjectDetail';
 import MobileHeader from './components/header/MobileHeader';
+import MobileProjects from './components/projects/MobileProjects';
+import { breakpoint } from './constants';
 
 import {
   BrowserRouter as Router,
@@ -17,7 +19,14 @@ import {
 import useViewport from './hooks/useViewport';
 
 function App() {
-  const { isMobile } = useViewport();
+  const { width } = useViewport();
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    if (width < breakpoint) setIsMobile(true);
+    if (width > breakpoint) setIsMobile(false);
+
+  }, [width]);
 
   return (
     <main>
@@ -26,7 +35,9 @@ function App() {
 
         <Routes>
           <Route path='/projects/:id' element={<ProjectDetail />} />
-          <Route path='/projects' element={<Projects />} />
+          <Route path='/projects' element={
+            isMobile ?  <MobileProjects /> : <Projects />
+          } />
           <Route path='/aboutMe' element={<AboutMe />} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/' element={<Home />} />

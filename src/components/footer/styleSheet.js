@@ -13,7 +13,6 @@ export const style = {
     color: 'var(--header-text ,#F0F8FF)',
     fontFamily: 'Inter, sans-serif',
     fontWeight: '700',
-    position: 'fixed',
     bottom: '0',
     left: '0',
     right: '0',

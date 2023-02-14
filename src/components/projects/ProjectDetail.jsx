@@ -13,7 +13,7 @@ const ProjectDetail = () => {
   const parameterId = useParams().id;
   const { width } = useViewport();
 
-  const mobileStyle = width < breakpoint ? {} : '';
+  const mobileStyle = width < breakpoint ? { width: '95%' } : '';
 
   const { name, gitHub, hostedUrl, image, description } = projectData.find(({ id }) => id === parameterId);
 

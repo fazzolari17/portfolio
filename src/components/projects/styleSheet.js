@@ -15,6 +15,11 @@ const style = {
     width: '950px',
     height: '500px'
   },
+  mobileImg: {
+    width: '100%',
+    height: 'auto',
+    borderRadius: '3px'
+  },
   img: {
     width: '80%',
     height: 'auto',
@@ -49,9 +54,8 @@ const style = {
   },
   projectTitle: {
     textAlign: 'center',
-    marginTop: '1rem',
     marginBottom: '1rem',
-    color: 'var(--header-text, #F0F8FF)'
+    color: 'var(--header-background, #071013)'
   },
   cardWidth: {
     width: '100%',

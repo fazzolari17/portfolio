@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header data-testid='header' style={style.header}>
       <Link to={home}><div data-testid={'logoG'} className="logo">G<span data-testid={'logoF'} className="tilt">F</span></div></Link>
-      <nav>
+      <nav style={style.nav}>
         <Link style={addUnderlineToCurrentPage(loc.pathname, home)} to={home}>Home</Link>
         <Link style={addUnderlineToCurrentPage(loc.pathname, aboutMe)} to={aboutMe}>About Me</Link>
         <Link style={addUnderlineToCurrentPage(loc.pathname, projects)} to={projects}>Projects</Link>

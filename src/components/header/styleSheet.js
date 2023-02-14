@@ -28,6 +28,9 @@ const style = {
     marginLeft: '2em',
     color: 'var(--header-text, #F0F8FF)'
   },
+  nav: {
+    marginRight: '2rem'
+  },
   currentPage: {
     listStyle: 'none',
     textDecoration: 'none',
