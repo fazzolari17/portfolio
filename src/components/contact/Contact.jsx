@@ -3,15 +3,21 @@ import Card from '../Card';
 import style from './styleSheet';
 import { contact } from '../../data/contact';
 import React from 'react';
+import { breakpoint } from '../../constants';
+import useViewport from '../../hooks/useViewport';
 
 // UNCOMMENT WHEN BACKEND FUNTIONALITY IS WORKING
 // import ContactForm from './ContactForm';
 
 const Contact = () => {
+  const { width } = useViewport();
+
+  const mobileStyle = width < breakpoint ? { width: '95%' } : '';
+
 
   return (
     <section className='sectionMargin'>
-      <Card>
+      <Card style={mobileStyle}>
         <p style={style.marginBottom}>
           {contact.info}
         </p>
