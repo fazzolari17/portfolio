@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button renders correctly 1`] = `
+<div
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "backgroundColor": "var(--header-background, #071013)",
+      "borderRadius": "5px",
+      "boxShadow": "-1px 0px 38px 8px rgba(0,0,0,0.51)",
+      "color": "var(--header-text, #F0F8FF)",
+      "cursor": "pointer",
+      "fontFamily": "Lexend Deca, sans-serif",
+      "maxWidth": "fit-content",
+      "padding": "1rem 1.5rem",
+    }
+  }
+>
+  <a
+    href="www.testHref.com"
+    rel="noreferrer"
+    style={
+      Object {
+        "backgroundColor": "var(--header-background, #071013)",
+        "color": "var(--header-text, #F0F8FF)",
+      }
+    }
+    target="_blank"
+  >
+    test button
+  </a>
+</div>
+`;

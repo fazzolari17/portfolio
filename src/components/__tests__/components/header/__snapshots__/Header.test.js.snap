@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Desktop Header renders correctly 1`] = `
+<header
+  data-testid="header"
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "var(--header-background, #071013)",
+      "color": "var(--header-text, #F0F8FF)",
+      "display": "flex",
+      "fontFamily": "Inter, sans-serif",
+      "fontWeight": "500",
+      "height": "60px",
+      "justifyContent": "space-between",
+      "left": 0,
+      "listStyle": "none",
+      "padding": "1em",
+      "position": "fixed",
+      "textDecoration": "none",
+      "textTransform": "uppercase",
+      "top": 0,
+      "width": "100vw",
+      "zIndex": "10",
+    }
+  }
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <div
+      className="logo"
+      data-testid="logoG"
+    >
+      G
+      <span
+        className="tilt"
+        data-testid="logoF"
+      >
+        F
+      </span>
+    </div>
+  </a>
+  <nav
+    style={
+      Object {
+        "marginRight": "2rem",
+      }
+    }
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+      style={
+        Object {
+          "borderBottom": "2px solid var(--header-text, #F0F8FF)",
+          "color": "var(--header-text, #F0F8FF)",
+          "listStyle": "none",
+          "marginLeft": "2em",
+          "textDecoration": "none",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Home
+    </a>
+    <a
+      href="/aboutMe"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "var(--header-text, #F0F8FF)",
+          "listStyle": "none",
+          "marginLeft": "2em",
+          "textDecoration": "none",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      About Me
+    </a>
+    <a
+      href="/projects"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "var(--header-text, #F0F8FF)",
+          "listStyle": "none",
+          "marginLeft": "2em",
+          "textDecoration": "none",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Projects
+    </a>
+    <a
+      href="/contact"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "var(--header-text, #F0F8FF)",
+          "listStyle": "none",
+          "marginLeft": "2em",
+          "textDecoration": "none",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Contact
+    </a>
+  </nav>
+</header>
+`;

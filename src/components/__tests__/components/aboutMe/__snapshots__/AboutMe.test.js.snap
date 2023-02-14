@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`about me page snapshot renders correctly 1`] = `
+<section
+  className="sectionMargin"
+>
+  <section
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "var(--hero-background, #395E66)",
+        "borderRadius": "5px",
+        "boxShadow": "-1px 0px 38px 8px rgba(0,0,0,0.51)",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "Lexend Deca, sans-serif",
+        "margin": "2rem auto",
+        "maxWidth": "300px",
+        "padding": "2rem",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "300px",
+          "overflow": "hidden",
+          "width": "150px",
+        }
+      }
+    >
+      <img
+        alt="headshot of the page owner Giuseppe Fazzolari"
+        src="Image to pull headshot.jpeg"
+        style={
+          Object {
+            "borderRadius": "5px",
+            "height": "100%",
+            "objectFit": "cover",
+            "objectPosition": "25% 20px",
+            "transform": "scale(1.85)",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+    <h1
+      style={
+        Object {
+          "color": "var(--header-text, #F0F8FF)",
+          "marginTop": "1rem",
+        }
+      }
+    >
+      Giuseppe Fazzolari
+    </h1>
+    <p
+      style={
+        Object {
+          "color": "var(--hero-secondaryText, #C1AE7C)",
+          "fontFamily": "Ubuntu sans-serif",
+        }
+      }
+    >
+      Software Engineer
+    </p>
+  </section>
+  <section
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "var(--header-background, #071013)",
+        "color": "var(--heaader-text, #F0F8FF)",
+        "display": "flex",
+        "justifyContent": "center",
+        "padding": "1rem",
+        "width": "100vw",
+      }
+    }
+  >
+    <section
+      style={
+        Object {
+          "backgroundColor": "var(--header-contrastColor, #75ABBC)",
+          "borderRadius": "5px",
+          "boxShadow": "",
+          "color": "var(--header-background, #071013)",
+          "fontFamily": "Lexend Deca, sans-serif",
+          "margin": "2rem auto",
+          "maxWidth": "600px",
+          "padding": "2rem",
+        }
+      }
+    >
+      <p>
+        I'm an avid hiker, biker, backcountry camper, and hanger (Hammocking). I Love all things outdoors! I have a passion for learning, and love to be challenged. I am happiest when I am creating something. My current experience includes REST API, MERN, CRUD, CI/CD, TDD. 
+      </p>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+            "marginTop": "1rem",
+          }
+        }
+      >
+        <div>
+          <ul>
+            <li>
+              TypeScript
+            </li>
+            <li>
+              JavaScript
+            </li>
+            <li>
+              Git
+            </li>
+            <li>
+              React
+            </li>
+            <li>
+              Node
+            </li>
+            <li>
+              React Native
+            </li>
+            <li>
+              Mongo DB
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              SQL
+            </li>
+            <li>
+              HTML5
+            </li>
+            <li>
+              CSS3
+            </li>
+            <li>
+              Jest
+            </li>
+            <li>
+              Mocha
+            </li>
+            <li>
+              Cypress E2E
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <section>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#395E66",
+            "borderRadius": "5px",
+            "boxShadow": "-1px 0px 38px 8px rgba(0,0,0,0.51)",
+            "display": "flex",
+            "flexDirection": "row",
+            "fontFamily": "Lexend Deca, sans-serif",
+            "height": "auto",
+            "justifyContent": "center",
+            "margin": "2rem auto",
+            "maxHeight": "auto",
+            "maxWidth": "75%",
+            "padding": "2rem",
+            "width": "90%",
+          }
+        }
+      >
+        <svg
+          color="white"
+          fill="currentColor"
+          height={75}
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": "white",
+              "cursor": "pointer",
+            }
+          }
+          viewBox="0 0 16 16"
+          width={75}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+          />
+        </svg>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <h2
+            style={
+              Object {
+                "color": "var(--header-text, #F0F8FF)",
+                "margin": ".5rem 0 1rem 0",
+              }
+            }
+          >
+            CERTIFICATIONS
+          </h2>
+          <a
+            href="https://www.freecodecamp.org/certification/fazzolari17/responsive-web-design"
+            rel="noreferrer"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+              }
+            }
+            target="_blank"
+          >
+            <img
+              alt="image of responsive web design certification from FreeCodeCamp"
+              src="responsiveWebDesign.png"
+              style={
+                Object {
+                  "height": "auto",
+                  "width": "70%",
+                }
+              }
+            />
+          </a>
+        </div>
+        <svg
+          color="white"
+          fill="currentColor"
+          height={75}
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": "white",
+              "cursor": "pointer",
+            }
+          }
+          viewBox="0 0 16 16"
+          width={75}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+          />
+        </svg>
+      </div>
+    </section>
+  </section>
+</section>
+`;

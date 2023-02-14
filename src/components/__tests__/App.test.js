@@ -1,9 +1,19 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import renderer from 'react-test-renderer';
+import App from '../../App';
 
 describe('App', () => {
+  describe('Snapshot', () => {
+    it('renders correctly', () => {
+      const tree = renderer.create(
+        <App />
+      ).toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+  });
   describe('Main', () => {
     beforeEach(() => {
       render(<App />);
@@ -32,10 +42,5 @@ describe('App', () => {
       expect(emailIcon).toBeInTheDocument();
     });
 
-    it('initial page is the home page', async () => {
-      const homeLink = await screen.findByText(/home/i);
-
-      expect(homeLink).toHaveStyle('border-bottom: 2px solid var(--header-text, #F0F8FF)');
-    });
   });
 });
