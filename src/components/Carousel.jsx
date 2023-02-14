@@ -43,10 +43,6 @@ const Carousel = ({ slide, style }) => {
       width: '90%',
       height: 'auto'
     },
-    imageContainer: {
-    // width: '80%',
-    // height: 'auto',
-    },
     outline: {
       backgroundColor: '#395E66',
       fontFamily: 'Lexend Deca, sans-serif',
