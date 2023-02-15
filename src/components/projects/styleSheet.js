@@ -57,6 +57,11 @@ const style = {
     marginBottom: '1rem',
     color: 'var(--header-text, #F0F8FF)'
   },
+  projectDetailTitle: {
+    textAlign: 'center',
+    marginBottom: '1rem',
+    color: 'var(--header-background, #071013)'
+  },
   cardWidth: {
     width: '100%',
     maxWidth: '800px'

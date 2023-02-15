@@ -20,7 +20,7 @@ const ProjectDetail = () => {
 
   return (
     <section className='sectionMargin'>
-      <h1 style={style.projectTitle}>{capitalized(name)}</h1>
+      <h1 style={style.projectDetailTitle}>{capitalized(name)}</h1>
 
       <Card style={mobileStyle}>
         <a href={hostedUrl} target='_blank' rel='noreferrer'>
