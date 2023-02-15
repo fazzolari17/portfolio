@@ -1,3 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+# sitemap
+User-agent: *
+Allow: /
+Sitemap: https://www.giuseppefazzolari.com/sitemap.xml
