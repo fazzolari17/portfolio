@@ -55,7 +55,7 @@ const style = {
   projectTitle: {
     textAlign: 'center',
     marginBottom: '1rem',
-    color: 'var(--header-background, #071013)'
+    color: 'var(--header-text, #F0F8FF)'
   },
   cardWidth: {
     width: '100%',
