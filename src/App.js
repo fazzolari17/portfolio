@@ -10,7 +10,6 @@ import ProjectDetail from './components/projects/ProjectDetail';
 import MobileHeader from './components/header/MobileHeader';
 import MobileProjects from './components/projects/MobileProjects';
 import { breakpoint } from './constants';
-import siteMap from './sitmap.xml';
 
 import {
   BrowserRouter as Router,
@@ -42,7 +41,6 @@ function App() {
           <Route path='/aboutMe' element={<AboutMe />} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/' element={<Home />} />
-          <Route path='/siteMap' element={<siteMap />} />
         </Routes>
 
       </Router>
