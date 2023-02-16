@@ -20,9 +20,9 @@ const AboutMe = () => {
     if (width < breakpoint) setIsMobile(false);
   }, [width]);
 
-  const renderCertifications = certifications.map(({ certificationUrl, image, altText, id }) => (
+  const renderCertifications = certifications.map(({ name, certificationUrl, image, altText, id }) => (
     <div key={id} style={style.flexCenter}>
-      <h2 style={style.certificationTitle}>{uppercase('certifications')}</h2>
+      <h2 style={style.certificationTitle}>{uppercase(name)}</h2>
       <a style={style.flexCenter} href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
         <img style={style.certificationImg} src={image} alt={altText} />
       </a>
@@ -32,22 +32,25 @@ const AboutMe = () => {
 
   const renderListOfSkills = () => {
     const half = Math.floor(aboutMe.languages.length / 2);
-    const leftList = aboutMe.languages.filter((lang, i) => i < half);
-    const rightList = aboutMe.languages.filter((lang, i) => i > half);
 
-    const renderLeftList = leftList.map((lang, i) => <li key={`${lang}${i}`}>{lang}</li>);
-    const renderRightList = rightList.map((lang, i) => (<li key={`${lang}${i}`}>{lang}</li>));
+    const leftList = aboutMe.languages
+      .filter((lang, i) => i < half)
+      .map((lang, i) => <li key={`${lang}${i}`}>{lang}</li>);
+
+    const rightList = aboutMe.languages
+      .filter((lang, i) => i > half)
+      .map((lang, i) => (<li key={`${lang}${i}`}>{lang}</li>));
 
     return (
       <>
         <div>
           <ul>
-            {renderLeftList}
+            {leftList}
           </ul>
         </div>
         <div>
           <ul>
-            {renderRightList}
+            {rightList}
           </ul>
         </div>
       </>
