@@ -17,12 +17,12 @@ const Contact = () => {
 
   return (
     <section className='sectionMargin'>
-      <Card style={mobileStyle}>
+      <Card style={mobileStyle} shadow={true}>
         <p style={style.marginBottom}>
           {contact.info}
         </p>
         <div className='flex' >
-          <ContactIcons style={style.marginRight} size={'2.5rem'} color={'var(--header-background, #071013)'} />
+          <ContactIcons style={style.marginRight} size={'40px'} color={'var(--header-background, #071013)'} />
         </div>
       </Card>
 

@@ -22,7 +22,7 @@ const style = {
     maxWidth: '300px',
     backgroundColor: 'var(--hero-background, #395E66)',
     borderRadius: '5px',
-    boxShadow: '-1px 0px 38px 8px rgba(0,0,0,0.51)',
+    // boxShadow: '-1px 0px 38px 8px rgba(0,0,0,0.51)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

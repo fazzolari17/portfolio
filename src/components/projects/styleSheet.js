@@ -35,7 +35,7 @@ const style = {
     padding: '2rem',
     margin: '2rem auto',
     borderRadius: '5px',
-    boxShadow: '-1px 0px 38px 8px rgba(0,0,0,0.51)'
+    boxShadow: 'var(--box-shadow, -1px 0px 38px 8px rgba(0,0,0,0.51))'
   },
   buttonContainer: {
     maxWidth: '860px',
@@ -45,7 +45,8 @@ const style = {
     flexDirection: 'row',
     padding: 'none !important',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    background: 'var(--header-text, #F0F8FF)'
   },
   cursor: {
     cursor: 'pointer',

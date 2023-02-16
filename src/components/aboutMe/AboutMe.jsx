@@ -1,23 +1,33 @@
 import React from 'react';
 import style from './styleSheet';
-// import Carousel from '../Carousel';
+import Carousel from '../Carousel';
 import Section from '../Section';
 import Card from '../Card';
 import Hero from './Hero';
-// import { uppercase } from '../../util/helperFunctions';
-// import certifications from '../../data/certifications';
+import { uppercase } from '../../util/helperFunctions';
+import certifications from '../../data/certifications';
 import aboutMe from '../../data/aboutme';
+import useViewport from '../../hooks/useViewport';
+import { breakpoint } from '../../constants';
+import MobileCertificates from './MobileCertificates';
 
 const AboutMe = () => {
+  const [isMobile, setIsMobile] = React.useState();
+  const { width } = useViewport();
 
-  // const renderCertifications = certifications.map(({ certificationUrl, image, altText, id }) => (
-  //   <div key={id} style={style.flexCenter}>
-  //     <h2 style={style.certificationTitle}>{uppercase('certifications')}</h2>
-  //     <a style={style.flexCenter} href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
-  //       <img style={style.certificationImg} src={image} alt={altText} />
-  //     </a>
-  //   </div>
-  // ));
+  React.useEffect(() => {
+    if (width > breakpoint) setIsMobile(true);
+    if (width < breakpoint) setIsMobile(false);
+  }, [width]);
+
+  const renderCertifications = certifications.map(({ certificationUrl, image, altText, id }) => (
+    <div key={id} style={style.flexCenter}>
+      <h2 style={style.certificationTitle}>{uppercase('certifications')}</h2>
+      <a style={style.flexCenter} href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
+        <img style={style.certificationImg} src={image} alt={altText} />
+      </a>
+    </div>
+  ));
 
 
   const renderListOfSkills = () => {
@@ -58,9 +68,15 @@ const AboutMe = () => {
           </div>
         </Card>
       </Section>
-      {/* <Section invert={false}>
-        <Carousel slide={renderCertifications} />
-      </Section> */}
+      {
+        isMobile
+          ?
+          <Section invert={false}>
+            <Carousel slide={renderCertifications} />
+          </Section>
+          :
+          <MobileCertificates />
+      }
     </section>
   );
 };

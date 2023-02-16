@@ -22,13 +22,13 @@ const ProjectDetail = () => {
     <section className='sectionMargin'>
       <h1 style={style.projectDetailTitle}>{capitalized(name)}</h1>
 
-      <Card style={mobileStyle}>
+      <Card style={{ ...mobileStyle, marginBottom: '4rem' }} shadow={true}>
         <a href={hostedUrl} target='_blank' rel='noreferrer'>
           <img style={style.imageContainer} src={image} alt={`screenshot of the ${name} project`} />
         </a>
       </Card>
 
-      <Card style={mobileStyle}>
+      <Card style={{ ...mobileStyle, marginBottom: '4rem' }} shadow={true}>
         <p style={style.cardWidth}>
           {description}
         </p>

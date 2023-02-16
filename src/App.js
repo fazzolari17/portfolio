@@ -25,7 +25,6 @@ function App() {
   React.useEffect(() => {
     if (width < breakpoint) setIsMobile(true);
     if (width > breakpoint) setIsMobile(false);
-
   }, [width]);
 
   return (
@@ -35,9 +34,7 @@ function App() {
 
         <Routes>
           <Route path='/projects/:id' element={<ProjectDetail />} />
-          <Route path='/projects' element={
-            isMobile ?  <MobileProjects /> : <Projects />
-          } />
+          <Route path='/projects' element={ isMobile ?  <MobileProjects /> : <Projects /> } />
           <Route path='/aboutMe' element={<AboutMe />} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/' element={<Home />} />

@@ -49,7 +49,7 @@ const Carousel = ({ slide, style }) => {
       padding: '2rem',
       margin: '2rem auto',
       borderRadius: '5px',
-      boxShadow: '-1px 0px 38px 8px rgba(0,0,0,0.51)'
+      boxShadow: 'var(--box-shadow, -1px 0px 38px 8px rgba(0,0,0,0.51)'
     },
     cursor: {
       cursor: 'pointer',

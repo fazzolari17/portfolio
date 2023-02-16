@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  background-color: var(--header-text, #F0F8FF);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -34,6 +38,7 @@ code {
   --hero-background: #395E66;
   --hero-secondaryText: #C1AE7C;
   --header-text: #F0F8FF;
+  --box-shadow: -1px 0px 24px 8px rgba(0,0,0,0.51);
 }
 
 a {
@@ -49,4 +54,13 @@ p {
 .sectionMargin {
   margin-top: 6rem;
   margin-bottom: 6rem;
+}
+
+.currentPage {
+  list-style: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 2em;
+  color: var(--header-text, #F0F8FF);
+  border-bottom: 2px solid var(--header-text, #F0F8FF);
 }

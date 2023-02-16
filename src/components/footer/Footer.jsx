@@ -18,7 +18,7 @@ const Footer = () => {
           Designed & Created By: Giuseppe Fazzolari ©
         </p>
         <br />
-        <ContactIcons style={style.marginRight} size={'2rem'} color={'var(--header-text, #F0F8FF)'} />
+        <ContactIcons style={style.marginRight} size={'32px'} color={'var(--header-text, #F0F8FF)'} />
 
       </div>
     </footer>

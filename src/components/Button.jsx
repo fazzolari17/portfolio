@@ -14,7 +14,7 @@ const Button = ({ href, buttonName, style, handleClick, invert }) => {
     backgroundColor: 'var(--hero-background, #395E66)',
     borderRadius: '5px',
     cursor: 'pointer',
-    boxShadow: '-1px 0px 38px 8px rgba(0,0,0,0.51)',
+    boxShadow: 'var(--box-shadow, -1px 0px 24px 8px rgba(0,0,0,0.51))',
   };
 
   return (
