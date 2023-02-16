@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import fullStackOpenCertificate from '../images/certifications/fullStackOpenCertificate.png';
 import reactNativeCertificate from '../images/certifications/reactNativeCertification.png';
 import typeScriptCertificate from '../images/certifications/typeScriptCertification.png';
@@ -15,7 +14,8 @@ const certifications = [
     certificationUrl: 'https://www.freecodecamp.org/certification/fazzolari17/responsive-web-design',
     image: responsiveWebDesign,
     dateIssued: 'December 15, 2022',
-    altText: 'image of responsive web design certification from FreeCodeCamp'
+    altText: 'image of responsive web design certification from FreeCodeCamp',
+    id: '81a19c89-f8b6-4bae-9fa0-defb66af246e'
   },
   {
     name: 'Javascript Algorithms and Data Structures',
@@ -24,7 +24,7 @@ const certifications = [
     image: JavaScript,
     dateIssued: 'December 11, 2022',
     altText: 'image of javascript algorithm and data structures certification from FreeCodeCamp',
-    id: uuid(),
+    id: 'e86ec406-0941-45b9-a576-df82d6bb5e59',
   },
   {
     name: 'Front End Development Libraries',
@@ -33,7 +33,7 @@ const certifications = [
     image: frontEndDevelopment,
     dateIssued: 'December 20, 2022',
     altText: 'image of front end development libraries certification from FreeCodeCamp',
-    id: uuid(),
+    id: '9bc1f194-db57-4b44-8740-971ada96a320',
   },
   {
     name: 'Back End Development and APIs',
@@ -42,7 +42,7 @@ const certifications = [
     image: backEndDevelopment,
     dateIssued: 'December 31, 2022',
     altText: 'image of back end development and apis certification from FreeCodeCamp',
-    id: uuid(),
+    id: 'f5f1b79c-c21c-41b2-a899-134c422c72b8',
   },
   {
     name: 'Full Stack Open',
@@ -52,7 +52,7 @@ const certifications = [
     image: fullStackOpenCertificate,
     dateIssued: 'September 08, 2022',
     altText: 'image of full stack open certification from University of Helsinki',
-    id: uuid(),
+    id: 'ad5c27cb-0418-4ac9-b16e-4b1c961460f8',
   },
   {
     name: 'Full Stack Open GraphQL',
@@ -62,7 +62,7 @@ const certifications = [
     image: graphQlCertificate,
     dateIssued: 'September 25, 2022',
     altText: 'image of Graph QL certification from University of Helsinki',
-    id: uuid(),
+    id: 'c96c4504-8d84-4fbe-b593-dbec018a20cd',
   },
   {
     name: 'Full Stack Open TypeScript',
@@ -72,7 +72,7 @@ const certifications = [
     image: typeScriptCertificate,
     dateIssued: 'November 04, 2022',
     altText: 'image of typescript certification from University of Helsinki',
-    id: uuid(),
+    id: '8cb2b1ba-c6f7-4cd7-ba0e-f77e5c46d59a',
   },
   {
     name: 'Full Stack Open React Native',
@@ -82,7 +82,7 @@ const certifications = [
     image: reactNativeCertificate,
     dateIssued: 'November 25, 2022',
     altText: 'image of react native certification from University of Helsinki',
-    id: uuid(),
+    id: 'c01aad74-b2eb-42a5-a3a1-abba50fc9414',
   },
 ];
 
