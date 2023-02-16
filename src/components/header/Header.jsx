@@ -12,7 +12,6 @@ const Header = () => {
 
   React.useEffect(() => {
     setLocations(loc);
-    console.log('rendered');
   }, [locations, loc]);
 
 
