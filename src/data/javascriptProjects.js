@@ -1,3 +1,4 @@
+import React from 'react';
 import quoteMachine from '../images/randomQuoteGenerator.png';
 import markdownPreviewer from '../images/markdownPreviewer.png';
 import drumMachine from '../images/drumMachine.png';
@@ -14,7 +15,7 @@ let projects = [
     image: patientorApp,
     language: 'typescript',
     id: '045736a7-69ec-4c58-8161-c1f7a8a05772',
-    description: `A mock patient diagnoses app written in TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. The app utilizes forms to add patients and patient diagnoses, modals to collect information as well as type and information verification when new data is added. Data that does not pass the validation tests in the form prevent the form from being submitted and display a message alerting the user to the incorrect and/or required fields. Sometimes it takes a minute to populate the data on this app, I guess that is due to me hosting the backend on a free service. It will populate with the existing data and allow you to add additional data in about a min.`,
+    description: <>A mock patient diagnoses app both the frontend and backend are written in React/TypeScript that tracks patients and different diagnoses when they visit a doctor/hospital. Patient and user data are persisted in a MongoDB database. If you do not wish to make your own account you can use the root account to check out the app. Login Credentials: <br/> { `email: root@gmail.com`} <br/> {`password: password` }</>,
   },
   {
     name: 'Repository Rating App',
