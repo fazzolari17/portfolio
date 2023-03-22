@@ -24,7 +24,7 @@ let projects = [
     image: reactNativeApp,
     language: 'react native',
     id: '7d2ceb6e-5e5a-4260-89ae-da17829f3ae0',
-    description: `A repository rating app written in react native. The repositories are able to be filtered and searched. Users can sign up, and once they sign in they are able rate the repositories and comment them. In order to demo this app you will have to tun it locally. I have not found an easy or free way to host this online yet. The setup instructions will be in the README file.`,
+    description: `A repository rating app written in react native. The repositories are able to be filtered and searched. Users can sign up, and once they sign in they are able rate the repositories and comment them. In order to demo this app you will have to run it locally. The setup instructions will be in the README file.`,
   },
   {
     name: 'random quote machine',
@@ -33,7 +33,7 @@ let projects = [
     image: quoteMachine,
     language: 'javascript',
     id: '54cc6268-c01b-4621-80c4-1d2b3002e6d7',
-    description: `One of my very first React Projects. This app was made in order to earn a certificate from Free Code Camp. This was a completely solo project helps to remind myself how far I have come. "Be Better Than You Were Yesterday"`,
+    description: `One of my very first React Projects.`,
   },
   {
     name: 'markdown previewer',
