@@ -56,11 +56,21 @@ p {
   margin-bottom: 6rem;
 }
 
-.currentPage {
+.current-page {
+  list-style: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .3em;
+  text-decoration-color: var(--header-text, #F0F8FF);
+  text-transform: uppercase;
+  margin-left: 2em;
+  color: var(--header-text, #F0F8FF);
+}
+
+.link {
   list-style: none;
   text-decoration: none;
   text-transform: uppercase;
   margin-left: 2em;
   color: var(--header-text, #F0F8FF);
-  border-bottom: 2px solid var(--header-text, #F0F8FF);
-}
+  }

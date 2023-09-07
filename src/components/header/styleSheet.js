@@ -19,25 +19,27 @@ const style = {
     zIndex: '10',
   },
   padding: {
-    padding: 5
+    padding: 5,
   },
   link: {
     listStyle: 'none',
     textDecoration: 'none',
     textTransform: 'uppercase',
     marginLeft: '2em',
-    color: 'var(--header-text, #F0F8FF)'
+    color: 'var(--header-text, #F0F8FF)',
   },
   nav: {
-    marginRight: '2rem'
+    marginRight: '2rem',
   },
   currentPage: {
     listStyle: 'none',
-    textDecoration: 'none',
+    textDecoration: 'underline',
+    textDecorationThickness: '2px',
+    textUnderlineOffset: '.3em',
+    textUnderlineColor: 'var(--header-text, #F0F8FF',
     textTransform: 'uppercase',
     marginLeft: '2em',
     color: 'var(--header-text, #F0F8FF)',
-    borderBottom: '2px solid var(--header-text, #F0F8FF)'
   },
   mobileNav: {
     fontFamily: 'Inter, sans-serif',
@@ -60,8 +62,8 @@ const style = {
     zIndex: '1',
     lineHeight: '1.6',
     transform: 'translate(0, -100%)',
-    transition: 'transform .5s ease-in-out'
-  }
+    transition: 'transform .5s ease-in-out',
+  },
 };
 
 export default style;
