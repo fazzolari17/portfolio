@@ -2,7 +2,7 @@ const style = {
   invert: {
     padding: '1rem',
     backgroundColor: 'var(--header-background, #071013)',
-    color: 'var(--heaader-text, #F0F8FF)'
+    color: 'var(--heaader-text, #F0F8FF)',
   },
   flex: {
     display: 'flex',
@@ -38,8 +38,7 @@ const style = {
     borderRadius: '5px',
     objectFit: 'cover',
     objectPosition: '25% 20px',
-    transform: 'scale(1.85)'
-
+    transform: 'scale(1.85)',
   },
   heroH1: {
     marginTop: '1rem',
@@ -53,23 +52,23 @@ const style = {
     marginTop: '1rem',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   certificationTitle: {
     margin: '.5rem 0 1rem 0',
-    color: 'var(--header-text, #F0F8FF)'
+    color: 'var(--header-text, #F0F8FF)',
   },
   sectionWidth: {
     width: '100vw',
   },
   certificationImg: {
     width: '70%',
-    height: 'auto'
+    height: 'auto',
   },
   mobileStyles: {
     transform: 'scale(.5)',
     margin: 'none',
-    padding: 'none'
+    padding: 'none',
   },
   mobileStylesFlex: {
     alignItems: 'flex-start',

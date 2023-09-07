@@ -1,17 +1,21 @@
 import React from 'react';
-import Project from './Project';
 import projectData from '../../data/javascriptProjects';
 import Section from '../Section';
 import Carousel from '../Carousel';
 import { uppercase } from '../../util/helperFunctions';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
-  const [slides, ] = React.useState(
-    projectData.map(({ name, hostedUrl, image, _github, id }) => (
-      <Project key={id} id={id} title={name} hostedUrl={hostedUrl} imageSource={image} />
-    ))
+  const [slides,] = React.useState(
+    projectData.map(({ name, _hostedUrl, image, _gitub, id }) => {
+      return (<div key={id}>
+        <img src={image} alt={name} />
+        <Link to={`/projects/${id}`}>
+          <p style={{ color: 'var(--header-text, #F0F8FF)', background: 'var(--header-background, #071013)' }} className="legend">{name}</p>
+        </Link>
+      </div>);
+    })
   );
-
 
 
   return (
@@ -20,7 +24,7 @@ const Projects = () => {
         {uppercase('projects')}
       </h1>
       <Section  invert={false}>
-        <Carousel slide={slides} />
+        <Carousel slides={slides} />
       </Section>
     </div>
   );

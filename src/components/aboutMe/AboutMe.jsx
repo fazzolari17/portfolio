@@ -20,11 +20,12 @@ const AboutMe = () => {
     if (width < breakpoint) setIsMobile(false);
   }, [width]);
 
+
   const renderCertifications = certifications.map(({ name, certificationUrl, image, altText, id }) => (
     <div key={id} style={style.flexCenter}>
-      <h2 style={style.certificationTitle}>{uppercase(name)}</h2>
-      <a style={style.flexCenter} href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
-        <img style={style.certificationImg} src={image} alt={altText} />
+      <img style={style.certificationImg} src={image} alt={altText} />
+      <a href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
+        <p className="legend" style={style.legend}>{uppercase(name)}</p>
       </a>
     </div>
   ));
@@ -75,7 +76,7 @@ const AboutMe = () => {
         isMobile
           ?
           <Section invert={false}>
-            <Carousel slide={renderCertifications} />
+            <Carousel slides={renderCertifications} />
           </Section>
           :
           <MobileCertificates />
