@@ -74,3 +74,7 @@ p {
   margin-left: 2em;
   color: var(--header-text, #F0F8FF);
   }
+
+  .carousel:hover .slide .legend {
+    opacity: 1;
+  }
