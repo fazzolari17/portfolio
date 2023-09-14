@@ -80,9 +80,6 @@ const Contact = ({ formState, setFormState }) => {
               <p>Thank you! Your email has been sent and you will recieve a response within 24 hours.</p>
             </Card>
             : <></>}
-
-      <div style={{ height: '180px' }} id="map"></div>
-
     </section>
   );
 };
