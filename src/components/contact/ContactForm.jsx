@@ -36,7 +36,7 @@ const ContactForm = ({ handleSubmit }) => {
           <Form className='contactForm' style={{ color: 'white' }}>
             <div style ={{ display: 'flex', justifyContent: 'space-between' }}>
               <div>
-                <label style={{ fontSize: '.75rem' }} htmlFor="name">Name: <span style={{ color: 'red' }}>*</span></label>
+                <label style={{ fontSize: '.75rem' }} htmlFor="name">Name: *</label>
                 <Field
                   style={{ display: 'block', marginBottom: '.5rem' }}
                   label='Name'

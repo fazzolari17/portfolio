@@ -13,9 +13,10 @@ const useGeolocation = () => {
       .query({ name: 'geolocation' })
       .then((permissionStatus) => {
         if (permissionStatus.state === 'prompt') {
-          navigator.geolocation.getCurrentPosition((loc) => {
-            setGeolocation({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, accuracy: loc.coords.accuracy });
-          });
+          setGeolocation({ latitude: null, longitude: null, accuracy: null });
+          // navigator.geolocation.getCurrentPosition((loc) => {
+          //   setGeolocation({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, accuracy: loc.coords.accuracy });
+          // });
         } else if (permissionStatus.state === 'granted') {
           navigator.geolocation.getCurrentPosition((loc) => {
             setGeolocation({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, accuracy: loc.coords.accuracy });
