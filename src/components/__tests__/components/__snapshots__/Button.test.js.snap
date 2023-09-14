@@ -7,7 +7,7 @@ exports[`button renders correctly 1`] = `
     Object {
       "backgroundColor": "var(--header-background, #071013)",
       "borderRadius": "5px",
-      "boxShadow": "-1px 0px 38px 8px rgba(0,0,0,0.51)",
+      "boxShadow": "var(--box-shadow, -1px 0px 24px 8px rgba(0,0,0,0.51))",
       "color": "var(--header-text, #F0F8FF)",
       "cursor": "pointer",
       "fontFamily": "Lexend Deca, sans-serif",

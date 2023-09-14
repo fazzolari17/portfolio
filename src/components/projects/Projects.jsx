@@ -11,7 +11,7 @@ const Projects = () => {
       return (<div key={id}>
         <img src={image} alt={name} />
         <Link to={`/projects/${id}`}>
-          <p style={{ color: 'var(--header-text, #F0F8FF)', background: 'var(--header-background, #071013)' }} className="legend">{name}</p>
+          <p className='legend'>{name}</p>
         </Link>
       </div>);
     })

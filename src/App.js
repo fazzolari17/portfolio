@@ -21,6 +21,7 @@ import useViewport from './hooks/useViewport';
 function App() {
   const { width } = useViewport();
   const [isMobile, setIsMobile] = React.useState(false);
+  const [formState, setFormState] = React.useState({ state: 'notSubmitted' });
 
   React.useEffect(() => {
     if (width < breakpoint) setIsMobile(true);
@@ -36,7 +37,7 @@ function App() {
           <Route path='/projects/:id' element={<ProjectDetail />} />
           <Route path='/projects' element={ isMobile ?  <MobileProjects /> : <Projects /> } />
           <Route path='/aboutMe' element={<AboutMe />} />
-          <Route path='/contact' element={<Contact/>} />
+          <Route path='/contact' element={<Contact formState={formState} setFormState={setFormState} />} />
           <Route path='/' element={<Home />} />
         </Routes>
 

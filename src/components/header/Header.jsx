@@ -17,7 +17,6 @@ const Header = () => {
 
 
   const addUnderlineToCurrentPage = (location, page) => {
-    console.log(location === page);
     if (location === page) return style.currentPage;
     return style.link;
   };

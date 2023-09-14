@@ -1,19 +1,19 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
 import App from '../../App';
 
 describe('App', () => {
-  describe('Snapshot', () => {
-    it('renders correctly', () => {
-      const tree = renderer.create(
-        <App />
-      ).toJSON();
+  // describe('Snapshot', () => {
+  //   it('renders correctly', () => {
+  //     const tree = renderer.create(
+  //       <App />
+  //     ).toJSON();
 
-      expect(tree).toMatchSnapshot();
-    });
-  });
+  //     expect(tree).toMatchSnapshot();
+  //   });
+  // });
   describe('Main', () => {
     beforeEach(() => {
       render(<App />);

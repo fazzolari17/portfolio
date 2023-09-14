@@ -51,15 +51,18 @@ exports[`Header Desktop Header renders correctly 1`] = `
   >
     <a
       href="/"
+      id="home-nav-link"
       onClick={[Function]}
       style={
         Object {
-          "borderBottom": "2px solid var(--header-text, #F0F8FF)",
           "color": "var(--header-text, #F0F8FF)",
           "listStyle": "none",
           "marginLeft": "2em",
-          "textDecoration": "none",
+          "textDecoration": "underline",
+          "textDecorationThickness": "2px",
           "textTransform": "uppercase",
+          "textUnderlineColor": "var(--header-text, #F0F8FF",
+          "textUnderlineOffset": ".3em",
         }
       }
     >
@@ -67,6 +70,7 @@ exports[`Header Desktop Header renders correctly 1`] = `
     </a>
     <a
       href="/aboutMe"
+      id="about-me-nav-link"
       onClick={[Function]}
       style={
         Object {
@@ -82,6 +86,7 @@ exports[`Header Desktop Header renders correctly 1`] = `
     </a>
     <a
       href="/projects"
+      id="projects-nav-link"
       onClick={[Function]}
       style={
         Object {
@@ -97,6 +102,7 @@ exports[`Header Desktop Header renders correctly 1`] = `
     </a>
     <a
       href="/contact"
+      id="contact-nav-link"
       onClick={[Function]}
       style={
         Object {

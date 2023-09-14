@@ -1,10 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
-import axios from 'axios';
 
-const ContactForm = () => {
-  // let url = 'https://script.google.com/macros/s/AKfycbxvzQ-fqiuplxkDNLYKuoyEqCSMabINDaCzMEySBDXCTqO298INEpXRbx1ihNQxuF6Q/exec';
-  let url = 'http://localhost:3001/email';
+
+const ContactForm = ({ handleSubmit }) => {
 
   const validation = values => {
     const errors = {};
@@ -21,66 +20,78 @@ const ContactForm = () => {
     return errors;
   };
 
-  const handleSubmit = async (event) => {
-    const name = event.name;
-    const email = event.email;
-    const message = event.message;
-
-    const emailMessage = {
-      name,
-      email,
-      message
-    };
-
-    await axios.get(`${url}`);
-    await axios.post(url, emailMessage);
-    // await fetch(url, {
-    //   method: 'POST',
-    //   body: JSON.stringify(emailMessage)
-    // })
-    //   .then(response => response.json())
-    //   .then(data => console.log(data))
-
-    // console.log(emailMessage);
-
-    // return emailMessage
-  };
 
   return (
     <Formik
-      initialValues={{ name: '', email: '', message: '' }}
+      initialValues={{ name: '', email: '', message: '', phone: '', organization: '' }}
       validate={validation}
-      onSubmit={handleSubmit}
+      isRequired={true}
+      onSubmit={(e, { resetForm }) => {
+        handleSubmit(e);
+        resetForm();
+      }}
     >
-      {({ isValid, dirty, _setFieldValue, _setFieldTouched }) => {
+      {({ isValid, dirty, _setFieldValue, _setFieldTouched, _resetForm }) => {
         return (
           <Form className='contactForm' style={{ color: 'white' }}>
-            <Field
-              style={{ display: 'block', marginBottom: '1rem', color: 'white' }}
-              label='Name'
-              placeholder='Full Name'
-              name='name'
-            />
-            <Field
-              style={{ display: 'block' }}
-              label='Email'
-              placeholder='Your Email'
-              name='email'
-            />
-            <Field
-              style={{ marginTop: '1rem' }}
-              as='textarea'
-              cols='61'
-              rows='10'
-              label='message'
-              placeholder='Your Message Here'
-              name='message'
-            />
+            <div style ={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div>
+                <label style={{ fontSize: '.75rem' }} htmlFor="name">Name: <span style={{ color: 'red' }}>*</span></label>
+                <Field
+                  style={{ display: 'block', marginBottom: '.5rem' }}
+                  label='Name'
+                  placeholder='Full Name'
+                  name='name'
+                  required
+                />
+                <label style={{ fontSize: '.75rem' }} htmlFor="email">Email: *</label>
+                <Field
+                  style={{ display: 'block', marginBottom: '1rem' }}
+                  label='Email'
+                  placeholder='Your Email'
+                  name='email'
+                  required
+                />
+              </div>
+              <div>
+                <label style={{ fontSize: '.75rem' }} htmlFor="phone">Phone Number:</label>
+                <Field
+                  style={{ display: 'block', marginBottom: '.5rem' }}
+                  label='Phone'
+                  placeholder='Phone Number'
+                  name='phone'
+                />
+                <label style={{ fontSize: '.75rem' }} htmlFor="organization">Organization:</label>
+                <Field
+                  style={{ display: 'block', marginBottom: '1rem' }}
+                  label='Organization'
+                  placeholder='Organization'
+                  name='organization'
+                />
+              </div>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <label style={{ fontSize: '.75rem', marginTop: '1rem' }} htmlFor="message">Message: *</label>
+              <label style={{ fontSize: '.65rem', marginTop: '1rem' }} htmlFor="message">* = Required Fields</label>
+            </div>
+            <div>
+              <Field
+                style={{ width: '100%' }}
+                // style={{ marginTop: '1rem' }}
+                as='textarea'
+                cols='61'
+                rows='10'
+                label='message'
+                placeholder='Your Message Here'
+                name='message'
+                required
+              />
+            </div>
             <button
               style={{ float: 'right' }}
               type='submit'
               disabled={!dirty || !isValid }
-              onClick={handleSubmit}
+              // onClick={handleSubmit}
             >
               Submit</button>
           </Form>
@@ -90,5 +101,9 @@ const ContactForm = () => {
     </Formik>
   );
 };
+
+ContactForm.propTypes = ({
+  handleSubmit: PropTypes.func.isRequired
+});
 
 export default ContactForm;
