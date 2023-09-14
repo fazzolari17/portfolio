@@ -24,7 +24,7 @@ const Contact = ({ formState, setFormState }) => {
 
   const handleSubmit = async (event) => {
     setFormState({ state: 'loading' });
-    const url = process.env.REACT_APP_DEV_EMAIL_SERVER_URL;
+    const url = process.env.REACT_APP_EMAIL_SERVER_URL;
     const name = event.name;
     const email = event.email;
     const message = event.message;
