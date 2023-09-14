@@ -43,7 +43,7 @@ const Contact = ({ formState, setFormState }) => {
       'Authorization'
     ] = `bearer ${process.env.REACT_APP_EMAIL_SERVER_API_KEY}`;
 
-    const response = await axios.post(url, { emailMessage, locationData });
+    const response = await axios.post(url, { emailMessage, locationData }).catch(error => console.error(error));
     if (response.status === 200) {
       setFormState({ state: 'success' });
     }
