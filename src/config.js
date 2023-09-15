@@ -1,8 +1,11 @@
 const PORT = process.env.PORT || 3001;
 
 let EMAIL_SERVER_URI;
-
-if (process.env.NODE_ENV === 'development') {
+console.log(process.env.NODE_ENV);
+if (
+  process.env.NODE_ENV === 'development' &&
+  process.env.REACT_APP_ENVIRONMENT
+) {
   EMAIL_SERVER_URI =
     process.env.REACT_APP_ENVIRONMENT === 'development'
       ? process.env.REACT_APP_DEV_EMAIL_SERVER_URL
