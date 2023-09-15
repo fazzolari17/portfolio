@@ -44,7 +44,7 @@ const Contact = ({ formState, setFormState }) => {
     ] = `bearer ${process.env.REACT_APP_EMAIL_SERVER_API_KEY}`;
 
     const response = await axios.post(url, { emailMessage, locationData }).catch(error => console.error(error));
-    console.log(response);
+
     if (response.status === 200) {
       setFormState({ state: 'success' });
     }
@@ -63,7 +63,7 @@ const Contact = ({ formState, setFormState }) => {
       </Card>
 
       {formState.state === 'notSubmitted' ?
-        <Card style={{ maxWidth: '570px', marginTop: '3rem' }}>
+        <Card style={{ maxWidth: '570px', marginTop: '3rem', ...mobileStyle }}>
           <h4 style={{ textAlign: 'center' }}>CONTACT ME</h4>
           <ContactForm handleSubmit={handleSubmit} />
         </Card>
@@ -77,7 +77,7 @@ const Contact = ({ formState, setFormState }) => {
             />
           </div>
           : formState.state === 'success'
-            ? <Card style={{ maxWidth: '570px', marginTop: '3rem' }}>
+            ? <Card style={{ maxWidth: '570px', marginTop: '3rem', ...mobileStyle }}>
               <p>Thank you! Your email has been sent and you will recieve a response within 24 hours.</p>
             </Card>
             : <></>}
