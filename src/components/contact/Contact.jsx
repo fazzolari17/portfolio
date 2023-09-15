@@ -14,6 +14,7 @@ import LoadingSpin from 'react-loading-spin';
 import ContactIcons from '../ContactIcons';
 // Data
 import { contact } from '../../data/contact';
+import config from '../../config';
 
 
 const Contact = ({ formState, setFormState }) => {
@@ -24,7 +25,7 @@ const Contact = ({ formState, setFormState }) => {
 
   const handleSubmit = async (event) => {
     setFormState({ state: 'loading' });
-    const url = process.env.REACT_APP_EMAIL_SERVER_URL;
+    const url = config.EMAIL_SERVER_URI;
     const name = event.name;
     const email = event.email;
     const message = event.message;

@@ -19,6 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "REACT_APP_ENVIRONMENT=development react-scripts start",
+    "dev:prod": "REACT_APP_ENVIRONMENT=production_server react-scripts start",
     "build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects ",
     "test": "ENV=\"test\" react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "testlog": "ENV=\"test\" react-scripts test -- --silent=false --transformIgnorePatterns \"node_modules/(?!axios)/\"",
