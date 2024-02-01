@@ -14,7 +14,6 @@ import LoadingSpin from 'react-loading-spin';
 import ContactIcons from '../ContactIcons';
 // Data
 import { contact } from '../../data/contact';
-import config from '../../config';
 
 
 const Contact = ({ formState, setFormState }) => {
@@ -25,7 +24,7 @@ const Contact = ({ formState, setFormState }) => {
 
   const handleSubmit = async (event) => {
     setFormState({ state: 'loading' });
-    const url = config.EMAIL_SERVER_URI;
+    const url = process.env.REACT_APP_EMAIL_SERVER_URL;
     const name = event.name;
     const email = event.email;
     const message = event.message;
@@ -51,6 +50,24 @@ const Contact = ({ formState, setFormState }) => {
     }
   };
 
+  const contactForm = <Card style={{ maxWidth: '570px', marginTop: '3rem', ...mobileStyle }}>
+    <h4 style={{ textAlign: 'center' }}>CONTACT ME</h4>
+    <ContactForm handleSubmit={handleSubmit} />
+  </Card>;
+
+  const loadingSpinner = <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <LoadingSpin
+      primaryColor='var(--hero-background, #395E66)'
+      animationTimingFunction='ease-in-out'
+      animationDirection='alternate'
+      numberOfRotationsInAnimation={3}
+    />
+  </div>;
+
+  const thankYouMessage = <Card style={{ maxWidth: '570px', marginTop: '3rem', ...mobileStyle }}>
+    <p>Thank you! Your email has been sent and you will recieve a response within 24 hours.</p>
+  </Card>;
+
 
   return (
     <section className='sectionMargin'>
@@ -63,25 +80,15 @@ const Contact = ({ formState, setFormState }) => {
         </div>
       </Card>
 
-      {formState.state === 'notSubmitted' ?
-        <Card style={{ maxWidth: '570px', marginTop: '3rem', ...mobileStyle }}>
-          <h4 style={{ textAlign: 'center' }}>CONTACT ME</h4>
-          <ContactForm handleSubmit={handleSubmit} />
-        </Card>
-        : formState.state === 'loading'
-          ? <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <LoadingSpin
-              primaryColor='var(--hero-background, #395E66)'
-              animationTimingFunction='ease-in-out'
-              animationDirection='alternate'
-              numberOfRotationsInAnimation={3}
-            />
-          </div>
-          : formState.state === 'success'
-            ? <Card style={{ maxWidth: '570px', marginTop: '3rem', ...mobileStyle }}>
-              <p>Thank you! Your email has been sent and you will recieve a response within 24 hours.</p>
-            </Card>
-            : <></>}
+      {
+        formState.state === 'notSubmitted' ?
+          contactForm
+          : formState.state === 'loading'
+            ? loadingSpinner
+            : formState.state === 'success'
+              ? thankYouMessage
+              : <></>
+      }
     </section>
   );
 };
