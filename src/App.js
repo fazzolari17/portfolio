@@ -5,6 +5,8 @@ import Home from './components/home/Index';
 import Contact from './components/contact/Contact';
 import Projects from './components/projects/Projects';
 import AboutMe from './components/aboutMe/AboutMe';
+import Dashboard from './components/dashboard/Dashboard';
+import Login from './components/login/Login';
 import Footer from './components/footer/Footer';
 import ProjectDetail from './components/projects/ProjectDetail';
 import MobileHeader from './components/header/MobileHeader';
@@ -17,27 +19,56 @@ import {
 } from 'react-router-dom';
 
 import useViewport from './hooks/useViewport';
+import { useAuth } from './contexts/AuthContext';
 
 function App() {
   const { width } = useViewport();
   const [isMobile, setIsMobile] = React.useState(false);
+  const { setIsLoggedIn, isLoggedIn, verifyAuth } = useAuth();
   const [formState, setFormState] = React.useState({ state: 'notSubmitted' });
 
   React.useEffect(() => {
     if (width < breakpoint) setIsMobile(true);
     if (width > breakpoint) setIsMobile(false);
-  }, [width]);
+    verifyAuth();
+  }, [width, verifyAuth]);
 
+  console.log(isLoggedIn, window.location.pathname === '/dashboard');
   return (
     <main>
       <Router>
-        {isMobile ?  <MobileHeader /> : <Header />}
+        {isLoggedIn && window.location.pathname === '/dashboard' ? (
+          <></>
+        ) : isMobile ? (
+          <MobileHeader isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        ) : (
+          <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        )}
 
         <Routes>
           <Route path='/projects/:id' element={<ProjectDetail />} />
-          <Route path='/projects' element={ isMobile ?  <MobileProjects /> : <Projects /> } />
+          <Route
+            path='/projects'
+            element={isMobile ? <MobileProjects /> : <Projects />}
+          />
           <Route path='/aboutMe' element={<AboutMe />} />
-          <Route path='/contact' element={<Contact formState={formState} setFormState={setFormState} />} />
+          <Route
+            path='/contact'
+            element={
+              <Contact formState={formState} setFormState={setFormState} />
+            }
+          />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route
+            path='/login'
+            element={
+              <Login
+                formState={formState}
+                setFormState={setFormState}
+                setIsLoggedIn={setIsLoggedIn}
+              />
+            }
+          />
           <Route path='/' element={<Home />} />
         </Routes>
 

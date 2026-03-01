@@ -90,7 +90,8 @@ const ContactForm = ({ handleSubmit }) => {
             <button
               style={{ float: 'right' }}
               type='submit'
-              disabled={!dirty || !isValid }
+              disabled={!dirty || !isValid}
+              tabIndex={0}
               // onClick={handleSubmit}
             >
               Submit</button>
