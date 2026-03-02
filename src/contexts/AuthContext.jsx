@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   const verifyAuth = async () => {
 
     try {
-      const response = await axios.get(`${config.BACKEND_API_URI}/api/me`, { withCredentials: true });
+      const response = await axios.get(`${config.BACKEND_API_URI}/me`, { withCredentials: true });
       if (response.data.authenticated || response.data.success) {
         setIsLoggedIn(true);
       }
