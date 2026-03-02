@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
       console.log(response.status, response);
 
       if (response.status === 200 && response.data.success) {
-        setIsLoggedIn((loggedIn) => !loggedIn);
+        setIsLoggedIn(true);
       }
 
       return response;
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
       console.log(response);
 
       if (response.data.success) {
-        setIsLoggedIn((loggedIn) => !loggedIn);
+        setIsLoggedIn(false);
       }
       return response;
 
