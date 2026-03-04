@@ -4,6 +4,25 @@
 /* font-family: 'Inter', sans-serif; */
 /* font-family: 'Ubuntu', sans-serif; */
 /* font-family: 'Lexend Deca', sans-serif; */
+/* Ensure the html and body allow full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Takes at least the full height of the viewport */
+}
+
+.content-area {
+  flex: 1; /* This fills all available space, pushing the footer down */
+}
+
+footer {
+  flex-shrink: 0; /* Prevents the footer from squishing */
+}
 
 * {
   margin: 0;

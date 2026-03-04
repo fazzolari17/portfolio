@@ -19,6 +19,10 @@ const headerItems = {
     name: 'login',
     path: '/login'
   },
+  dashboard: {
+    name: 'dashboard',
+    path: '/dashboard'
+  },
   logout: {
     name: 'logout',
     path: '#'

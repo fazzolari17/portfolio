@@ -16,9 +16,11 @@ const useClickOutsideToCloseMenu = (ref, setIsMenuOpen) => {
     }
     // Bind the event listener
     document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleClickOutside, { passive: true });
     return () => {
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleClickOutside);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);

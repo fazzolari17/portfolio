@@ -28,21 +28,22 @@ const Login = ({ formState, setFormState }) => {
         setFormState({ state: 'notsubmitted' });
         navigate('/dashboard');
       }
-      console.log(response.status);
-      console.log(response.data.success);
-      console.log(response.data);
-      if (response.status === 401 && response.data.message.toLowerCase().includes(['invalid', 'email', 'password'])) {
-        console.log('GOT HERE');
-
+      // console.log(response.status);
+      // console.log(response.data.success);
+      // console.log(response.data);
+      if (response.status === 401) {
+        setFormState({ state: 'invalid' });
       }
     } catch (error) {
       console.error(error);
-      // return error;
     }
   };
 
   const loginForm = <Card style={{ height: '30rem', minWidth: '20rem' }}>
     <h4 style={{ textAlign: 'center' }}>Login</h4>
+    <h6 style={{ color: 'red', textAlign: 'center', margin: '1rem' }}>
+      {formState.state === 'invalid' ? 'Invalid Email or Password.' : null}
+    </h6>
     <LoginForm handleSubmit={handleSubmit} />
   </Card>;
 
@@ -57,9 +58,9 @@ const Login = ({ formState, setFormState }) => {
 
 
   return (
-    <section style={{ margin: 150 }}>
+    <section style={{ margin: 150, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       {
-        formState.state === 'notSubmitted' ?
+        formState.state === 'notSubmitted' || formState.state === 'invalid' ?
           loginForm
           : formState.state === 'loading'
             ? loadingSpinner

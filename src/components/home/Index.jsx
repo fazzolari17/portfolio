@@ -29,7 +29,7 @@ const Index = () => {
         const data = response.data;
         setImages(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setImages(fallbackImages);
       }
     };

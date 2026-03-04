@@ -20,8 +20,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axios.post(url, loginData, { withCredentials: true });
 
-      console.log(response.status, response);
-
       if (response.status === 200 && response.data.success) {
         setIsLoggedIn(true);
       }
@@ -39,14 +37,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-
+    const logoutUrl = `${config.BACKEND_API_URI}/logout`;
     try {
-      const response =  await axios.post(
-        `${config.BACKEND_API_URI}/logout`, {}, {
-          withCredentials: true
-        });
-
-      console.log(response);
+      const response =  await axios.post(logoutUrl);
 
       if (response.data.success) {
         setIsLoggedIn(false);
@@ -61,14 +54,14 @@ export const AuthProvider = ({ children }) => {
   };
 
   const verifyAuth = async () => {
-
+    const authVerificationUrl = `${config.BACKEND_API_URI}/me`;
     try {
-      const response = await axios.get(`${config.BACKEND_API_URI}/me`, { withCredentials: true });
+      const response = await axios.get(authVerificationUrl, { withCredentials: true });
       if (response.data.authenticated || response.data.success) {
         setIsLoggedIn(true);
       }
     } catch (error) {
-      console.log('ERROR', error);
+      console.error(error);
       setIsLoggedIn(false);
     }
 
