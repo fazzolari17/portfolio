@@ -26,7 +26,7 @@ export const AddMileageForm = ({
   formValues,
   setFormValues,
   onSubmit,
-  // onCancel
+  onCancel
 }) => {
   return (
     <Formik
@@ -120,7 +120,7 @@ export const AddMileageForm = ({
                     backgroundColor: 'var(--error-color)'
                   }}
                   type='button'
-                  // onClick={onCancel}
+                  onClick={onCancel}
                 >
                   Cancel
                 </Button>
@@ -167,8 +167,9 @@ AddMileageForm.propTypes = {
       PropTypes.number
     ]),
   }),
-  setFormValues: PropTypes.func,
-  onSubmit: PropTypes.func
+  setFormValues: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired
 };
 
 FormValueSync.propTypes = {

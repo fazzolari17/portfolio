@@ -34,7 +34,7 @@ const MileageEntryModal = (
         formValues={initialFormValues}
         setFormValues={setFormValues}
         onSubmit={onSubmit}
-      // onCancel={onClose}
+        onCancel={onClose}
       />
     </DialogContent>
   </Dialog>);

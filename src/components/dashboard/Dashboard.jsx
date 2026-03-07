@@ -38,38 +38,6 @@ const Dashboard = () => {
     verifyAuth();
   }, [isMobile, verifyAuth]);
 
-  // const dashboardMenuItems = {
-  //   home: {
-  //     name: 'home',
-  //     icon: Home,
-  //     route: '/dashboard/home'
-  //   },
-  //   analytics: {
-  //     name: 'analytics',
-  //     icon: BarChart2,
-  //     route: '/dashboard/analytics'
-  //   },
-  //   team: {
-  //     name: 'clients',
-  //     icon: Users,
-  //     route: '/dashboard/clients'
-  //   },
-  //   mileage: {
-  //     name: 'mileage',
-  //     icon: Truck,
-  //     route: '/dashboard/mileage'
-  //   },
-  //   settings: {
-  //     name: 'settings',
-  //     icon: Settings,
-  //     route: '/dashboard/settings'
-  //   },
-  //   logout: {
-  //     name: 'logout',
-  //     icon: LogOut
-  //   }
-  // };
-
   const styles = {
     container: {
       display: 'flex',
