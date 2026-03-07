@@ -1,5 +1,11 @@
 import React from 'react';
+import {
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom';
 import './App.css';
+// Components
 import Header from './components/header/Header';
 import Home from './components/home/Index';
 import Contact from './components/contact/Contact';
@@ -11,36 +17,35 @@ import Footer from './components/footer/Footer';
 import ProjectDetail from './components/projects/ProjectDetail';
 import ProtectedRoute from './components/ProtectedRoutes';
 import MobileProjects from './components/projects/MobileProjects';
-import { breakpoint } from './constants';
-
-import {
-  Routes,
-  Route,
-  useLocation,
-} from 'react-router-dom';
-
-import useViewport from './hooks/useViewport';
-import { useAuth } from './contexts/AuthContext';
 import PageNotFound from './components/PageNotFound';
+// Contexts
+import { useAuth } from './contexts/AuthContext';
+import { useIsMobile } from './contexts/ViewportProvider';
+// Data
+import { dashboardMenuItems } from './data/dashboardMenuItems';
+
 
 function App() {
-  const { width } = useViewport();
-  const [isMobile, setIsMobile] = React.useState(false);
+  const { isMobile } = useIsMobile();
   const { setIsLoggedIn, isLoggedIn, verifyAuth } = useAuth();
   const loc = useLocation();
   const [formState, setFormState] = React.useState({ state: 'notSubmitted' });
 
   React.useEffect(() => {
-    if (width < breakpoint) setIsMobile(true);
-    if (width > breakpoint) setIsMobile(false);
     verifyAuth();
-  }, [width, verifyAuth]);
+  }, [verifyAuth]);
+
+  const renderDashboardRoutes = (dashboardMenuItems) => {
+    return Object.entries(dashboardMenuItems).filter(([key, value]) => value.component ? [key, value] : null).map(([key, value]) => {
+      return <Route key={key} path={value.name} element={value.component } />;
+    });
+  };
 
   return (
     <main>
 
       <div className='app-container'>
-        {isLoggedIn && loc.pathname === '/dashboard' ? (
+        {isLoggedIn && loc.pathname.includes('/dashboard') ? (
           <></>
         ) : (
           <Header
@@ -74,9 +79,18 @@ function App() {
               }
             />
             <Route path='/' element={<Home />} />
+
+            {/* PROTECTED ROUTES */}
             <Route element={<ProtectedRoute />}>
-              <Route path='/dashboard' element={<Dashboard />} />
+
+              {/* DASHBOARD ROUTES */}
+              <Route path='/dashboard/*' element={<Dashboard />}>
+                {renderDashboardRoutes(dashboardMenuItems)}
+                <Route path='*' element={<PageNotFound />} />
+              </Route>
+
             </Route>
+
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </div>

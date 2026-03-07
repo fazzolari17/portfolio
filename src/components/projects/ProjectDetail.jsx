@@ -6,14 +6,13 @@ import projectData from '../../data/javascriptProjects';
 
 import Card from '../Card';
 import Button from '../Button';
-import useViewport from '../../hooks/useViewport';
-import { breakpoint } from '../../constants';
+import { useIsMobile } from '../../contexts/ViewportProvider';
 
 const ProjectDetail = () => {
   const parameterId = useParams().id;
-  const { width } = useViewport();
+  const { isMobile } = useIsMobile();
 
-  const mobileStyle = width < breakpoint ? { width: '95%' } : '';
+  const mobileStyle = isMobile ? { width: '95%' } : '';
 
   const { name, gitHub, hostedUrl, image, description } = projectData.find(({ id }) => id === parameterId);
 

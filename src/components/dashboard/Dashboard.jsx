@@ -1,66 +1,74 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
-// Note: You can replace these with plain text if you don't have lucide-react installed
+import React, { useState, Fragment } from 'react';
+// React Router
+import { Outlet, Link } from 'react-router-dom';
+// Icons
 import {
   Menu, X,
-  Home, BarChart2, Users, Settings, Truck, LogOut,
+  // Home, BarChart2, Users, Settings, Truck, LogOut
 } from 'lucide-react';
-import { Fragment } from 'react';
-// import axios from 'axios';
+import { dashboardMenuItems } from '../../data/dashboardMenuItems';
+// Contexts
 import { useAuth } from '../../contexts/AuthContext';
-import useViewport from '../../hooks/useViewport';
-import { capitalized } from '../../util/helperFunctions';
-import HomePage from './dashboard pages/Home';
-import MileagePage from './dashboard pages/Mileage';
-import { Link } from 'react-router-dom';
+import { useIsMobile } from '../../contexts/ViewportProvider';
+// Hooks
 import useClickOutsideToCloseMenu from '../../hooks/useClickOutsideToCloseMenu';
-// import headerItems from '../../data/headerItems';
-// import GFLogo from '../Logo';
+// Helper Functions
+import { capitalized } from '../../util/helperFunctions';
+
+
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [currentPage, setCurrentPage] = React.useState('home');
-  const { logout } = useAuth();
-  const { isMobile } = useViewport();
-  const navItemsColor = '#cbd5e1';
+  const { logout, verifyAuth } = useAuth();
+  const { isMobile } = useIsMobile();
+
+  const primaryColor = 'var(--header-background)';
+  const secondaryColor = 'var(--header-text)';
+  const secondaryWhiteColor = 'var(--secondary-white)';
+  const borderColor = '#334155';
+
 
   React.useEffect(() => {
-    // This runs whenever isMobile changes
     if (isMobile) {
-      setIsOpen(false); // Close it automatically on mobile
+      setIsOpen(false);
     } else {
-      setIsOpen(true);  // Keep it open on desktop
+      setIsOpen(true);
     }
-  }, [isMobile]);
 
-  const dashboardMenuItems = {
-    home: {
-      name: 'home',
-      icon: Home,
-      page: <HomePage></HomePage>
-    },
-    analystics: {
-      name: 'analytics',
-      icon: BarChart2
-    },
-    team: {
-      name: 'team',
-      icon: Users
-    },
-    mileage: {
-      name: 'mileage',
-      icon: Truck,
-      page: <MileagePage></MileagePage>
-    },
-    settings: {
-      name: 'settings',
-      icon: Settings
-    },
-    logout: {
-      name: 'logout',
-      icon: LogOut
-    }
-  };
+    verifyAuth();
+  }, [isMobile, verifyAuth]);
+
+  // const dashboardMenuItems = {
+  //   home: {
+  //     name: 'home',
+  //     icon: Home,
+  //     route: '/dashboard/home'
+  //   },
+  //   analytics: {
+  //     name: 'analytics',
+  //     icon: BarChart2,
+  //     route: '/dashboard/analytics'
+  //   },
+  //   team: {
+  //     name: 'clients',
+  //     icon: Users,
+  //     route: '/dashboard/clients'
+  //   },
+  //   mileage: {
+  //     name: 'mileage',
+  //     icon: Truck,
+  //     route: '/dashboard/mileage'
+  //   },
+  //   settings: {
+  //     name: 'settings',
+  //     icon: Settings,
+  //     route: '/dashboard/settings'
+  //   },
+  //   logout: {
+  //     name: 'logout',
+  //     icon: LogOut
+  //   }
+  // };
 
   const styles = {
     container: {
@@ -71,14 +79,14 @@ const Dashboard = () => {
       overflow: 'hidden',
     },
     menubar: {
-      // width: '250px',
-      backgroundColor: '#1e293b',
+
+      backgroundColor:  primaryColor,//'#1e293b',
       color: 'white',
-      // height: '100%',
-      transition: 'margin-left 0.3s ease-in-out',
-      // marginLeft: isOpen ? '0' : '-250px', // This creates the slide effect
+
+      transition: 'transform 0.3s ease-in-out, all 0.3s ease-in-out',
       display: 'flex',
       flexDirection: 'column',
+
       // Mobile (Top Slide) vs Desktop (Side Slide)
       position: isMobile ? 'fixed' : 'relative',
       width: isMobile ? '100vw' : '250px',
@@ -89,8 +97,9 @@ const Dashboard = () => {
       transform: isOpen
         ? 'translate(0, 0)'
         : (isMobile ? 'translateY(-100%)' : 'translateX(-250px)'),
-      // Ensure it doesn't leave a gap on desktop when closed
+
       marginLeft: !isMobile && !isOpen ? '-250px' : '0',
+      zIndex: 1000,
     },
     header: {
       height: '60px',
@@ -99,38 +108,41 @@ const Dashboard = () => {
       justifyContent: 'center',
       fontSize: '1.25rem',
       fontWeight: 'bold',
-      color: 'white',
-      borderBottom: '1px solid #334155',
+      color: secondaryColor,
+      borderBottom: `1px solid ${borderColor}`,
     },
     nav: {
       flex: 1,
       paddingTop: '20px',
+      width: !isMobile && '250px'
     },
     navItem: {
       display: 'flex',
       alignItems: 'center',
-      // justifyContent: 'flex-start',
       padding: '12px 20px',
-      color: navItemsColor,
+      color: secondaryColor,
       textDecoration: 'none',
       fontSize: '1rem',
       transition: 'background 0.2s',
     },
     mainContent: {
+      width: '100vw',
+      overflow: 'scroll',
       flex: 1,
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: '#f8fafc',
+      backgroundColor: secondaryWhiteColor,
     },
     topBar: {
       height: '60px',
-      backgroundColor: isOpen && isMobile ? '#1e293b' : 'f0f8ff',
+      backgroundColor: isOpen && isMobile ? primaryColor : secondaryWhiteColor,
       display: 'flex',
       alignItems: 'center',
       padding: '0 20px',
       boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       position: 'relative',
       zIndex: 1001, // Keep toggle button above the sliding menu
+      transition: 'background-color 0.35s ease-in-out',
     },
     toggleBtn: {
       background: 'none',
@@ -141,7 +153,7 @@ const Dashboard = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: isMobile ? navItemsColor : 'black',
+      color: isMobile ? secondaryColor : primaryColor,
     },
     contentArea: {
       padding: '30px',
@@ -158,19 +170,19 @@ const Dashboard = () => {
     }
   };
 
-  const renderCurrentPage = (currentPage, dashboardMenuItems) => {
-    return dashboardMenuItems[currentPage].page;
-  };
+  const renderHeaderText = () => {
+    const pathname = window.location.href.split('/');
 
-  const handleMenuItemClick = (event, value) => {
-    if (value.name === 'logout') {
-      return handleLogout(event);
-    } else {
-      setCurrentPage(() => value.name);
-      if (isMobile) {
-        setIsOpen(false);
-      }
-      return ;
+    if (pathname.at(-1) !== '' && pathname.at(-1) in dashboardMenuItems) {
+      return <>
+        {capitalized(pathname.at(-1))}
+        {pathname.at(-1).toLowerCase() !== 'dashboard' ? ' Dashboard' : ''}
+      </>;
+    } else if (pathname.at(-2) in dashboardMenuItems) {
+      return <>
+        {capitalized(pathname.at(-2))}
+        {pathname.at(-2).toLowerCase() !== 'dashboard' ? ' Dashboard' : ''}
+      </>;
     }
   };
 
@@ -183,19 +195,20 @@ const Dashboard = () => {
     <div style={styles.container} >
       {/* MENUBAR */}
       <aside style={styles.menubar} ref={applyRef}>
-        <div style={{ ...styles.header }}>
-          <Link to={'/'} onClick={() => window.location.href('/')}>
-          </Link>DASHBOARD MENU
+        <div style={{ ...styles.header, padding: '10px', textAlign: 'center' }}>
+          DASHBOARD MENU
         </div>
         <nav style={styles.nav}>
           {Object.entries(dashboardMenuItems).map(([key, value]) => {
             const Icon = value.icon;
             return (
               <Fragment key={key}>
-                <a
-                  href='#'
-                  onClick={(e) => handleMenuItemClick(e, value)}
-                  style={styles.navItem}> <Icon size={18} style={{ marginRight: '12px' }} />{value.name}</a>
+                <Link
+                  onClick={value.name === 'logout' ? handleLogout : () => setIsOpen(false)}
+                  to={`/dashboard/${value.name}`} style={styles.navItem}>
+                  <Icon size={18} style={{ marginRight: '12px' }} />
+                  {value.name}
+                </Link>
               </Fragment>);
           }
           )}
@@ -206,15 +219,33 @@ const Dashboard = () => {
       <div style={styles.mainContent}>
         <header style={styles.topBar}>
           <button onClick={() => setIsOpen(!isOpen)} style={styles.toggleBtn}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobile
+              ? isOpen
+                ? <X size={24} color={primaryColor} /> : <Menu size={24} color={primaryColor} />
+              : <></>}
+            {!isMobile
+              ? isOpen
+                ?
+                < X size={24} color={primaryColor} />
+                : <Menu size={24} color={primaryColor} />
+              : <></>}
           </button>
-          <span style={{ marginLeft: '20px', fontWeight: '500', color: isMobile ? navItemsColor : 'black' }}>{`${capitalized(currentPage)} Dashboard`}</span>
+          <span style={{
+            marginLeft: '20px',
+            fontWeight: '500',
+            color:
+              !isMobile
+                ? primaryColor
+                : isMobile && !isOpen
+                  ? primaryColor
+                  : secondaryColor }
+          }>
+            {renderHeaderText()}
+          </span>
         </header>
-
+        {/* Main Content Area */}
         <main style={styles.contentArea}>
-          {renderCurrentPage(currentPage, dashboardMenuItems)}
-          {/* <h2>Welcome to your Dashboard</h2>
-          <p>The menubar is currently {isOpen ? 'Visible' : 'Hidden'}.</p> */}
+          <Outlet />
         </main>
       </div>
     </div>

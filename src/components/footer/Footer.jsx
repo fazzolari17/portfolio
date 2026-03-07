@@ -1,11 +1,11 @@
 import React from 'react';
-import useViewport from '../../hooks/useViewport';
 import ContactIcons from '../ContactIcons';
 import { style } from './styleSheet';
 import { useLocation } from 'react-router-dom';
+import { useIsMobile } from '../../contexts/ViewportProvider';
 
 const Footer = () => {
-  const { isMobile } = useViewport();
+  const { isMobile } = useIsMobile();
   const loc = useLocation().pathname;
 
   const mobileStyle = isMobile ? style.mobileFooter : '';

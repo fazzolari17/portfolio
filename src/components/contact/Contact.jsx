@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-// Contexts and Constants
-import { breakpoint } from '../../constants';
-import useViewport from '../../hooks/useViewport';
+// Contexts
+import { useIsMobile } from '../../contexts/ViewportProvider';
+
 import useGeolocation from '../../hooks/useGeolocation';
 // Styles
 import style from './styleSheet';
@@ -17,9 +17,9 @@ import { contact } from '../../data/contact';
 
 
 const Contact = ({ formState, setFormState }) => {
-  const { width } = useViewport();
+  const { isMobile } = useIsMobile();
   const locationData = useGeolocation();
-  const mobileStyle = width < breakpoint ? { width: '95%' } : '';
+  const mobileStyle = isMobile ? { width: '95%' } : '';
 
 
   const handleSubmit = async (event) => {

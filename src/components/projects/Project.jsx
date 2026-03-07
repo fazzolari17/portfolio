@@ -1,12 +1,14 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import style from './styleSheet';
 import { uppercase } from '../../util/helperFunctions';
-import useViewport from '../../hooks/useViewport';
+
+import { useIsMobile } from '../../contexts/ViewportProvider';
 
 const Project = ({ title, imageSource, _hostedUrl, id }) => {
-  const { width, isMobile } = useViewport();
+
+  const { isMobile, width } = useIsMobile();
 
   const transformText = width < 561 ? { transform: 'scale(.75)' } : '';
 

@@ -26,11 +26,9 @@ const Login = ({ formState, setFormState }) => {
 
       if (response.status === 200 && response.data.success) {
         setFormState({ state: 'notsubmitted' });
-        navigate('/dashboard');
+        navigate('/dashboard/home');
       }
-      // console.log(response.status);
-      // console.log(response.data.success);
-      // console.log(response.data);
+
       if (response.status === 401) {
         setFormState({ state: 'invalid' });
       }

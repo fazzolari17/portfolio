@@ -44,7 +44,7 @@ const style = {
   mobileNav: {
     fontFamily: 'Inter, sans-serif',
     fontWeight: '500',
-    height: '150px',
+    height: 'auto',
     padding: '1em',
     listStyle: 'none',
     textDecoration: 'none',

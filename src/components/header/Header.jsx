@@ -6,9 +6,11 @@ import { useAuth } from '../../contexts/AuthContext';
 import useClickOutsideToCloseMenu from '../../hooks/useClickOutsideToCloseMenu';
 import GFLogo from '../Logo';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import PropTypes from 'prop-types';
 
-const Header = ({ isMobile }) => {
+import { useIsMobile } from '../../contexts/ViewportProvider';
+
+const Header = () => {
+  const { isMobile } = useIsMobile();
   const loc = useLocation();
   const navigate = useNavigate();
   const { isLoggedIn, logout } = useAuth();
@@ -91,10 +93,6 @@ const Header = ({ isMobile }) => {
     }
   </div>
   );
-};
-
-Header.propTypes = {
-  isMobile: PropTypes.string,
 };
 
 export default Header;

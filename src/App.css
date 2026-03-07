@@ -12,13 +12,16 @@
 /* font-family: 'Lexend Deca', sans-serif; */
 
 
-/* :root.light, 
+:root.light, 
 :root {
   --header-background: #071013;
+  --secondary-background: #1e293b;
   --header-contrastColor: #75ABBC;
   --hero-background: #395E66;
   --header-text: #F0F8FF;
-} */
+  --secondary-white: #f8fafc;
+  --error-color: #DC3545;
+}
 
 
 /* ============================ */

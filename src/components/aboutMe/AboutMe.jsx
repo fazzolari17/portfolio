@@ -1,35 +1,14 @@
 import React from 'react';
 import style from './styleSheet';
-// import Carousel from '../Carousel';
+
 import Section from '../Section';
 import Card from '../Card';
 import Hero from './Hero';
-// import { uppercase } from '../../util/helperFunctions';
-// import certifications from '../../data/certifications';
+
 import aboutMe from '../../data/aboutme';
-// import useViewport from '../../hooks/useViewport';
-// import { breakpoint } from '../../constants';
-// import MobileCertificates from './MobileCertificates';
+
 
 const AboutMe = () => {
-  // const [isMobile, setIsMobile] = React.useState();
-  // const { width } = useViewport();
-
-  // React.useEffect(() => {
-  //   if (width > breakpoint) setIsMobile(true);
-  //   if (width < breakpoint) setIsMobile(false);
-  // }, [width]);
-
-
-  // const renderCertifications = certifications.map(({ name, certificationUrl, image, altText, id }) => (
-  //   <div key={id} style={style.flexCenter}>
-  //     <img style={style.certificationImg} src={image} alt={altText} />
-  //     <a href={certificationUrl} target={'_blank'} rel={'noreferrer'}>
-  //       <p className="legend" style={style.legend}>{uppercase(name)}</p>
-  //     </a>
-  //   </div>
-  // ));
-
 
   const renderListOfSkills = () => {
     const half = Math.floor(aboutMe.languages.length / 2);

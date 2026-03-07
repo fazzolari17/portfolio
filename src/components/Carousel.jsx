@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
-import useViewport from '../hooks/useViewport';
+import { useIsMobile } from '../contexts/ViewportProvider';
 import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 
 const Carousel = ({ slides, style }) => {
-  const { width } = useViewport();
+  const { width } = useIsMobile();
 
   const s = {
     flex: {

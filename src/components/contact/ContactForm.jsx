@@ -36,7 +36,7 @@ const ContactForm = ({ handleSubmit }) => {
           <Form className='contactForm' style={{ color: 'white' }}>
             <div style ={{ display: 'flex', justifyContent: 'space-between' }}>
               <div>
-                <label style={{ fontSize: '.75rem' }} htmlFor="name">Name: *</label>
+                <label style={{ fontSize: '.75rem' }} htmlFor='name'>Name: *</label>
                 <Field
                   style={{ display: 'block', marginBottom: '.5rem' }}
                   label='Name'
@@ -44,7 +44,7 @@ const ContactForm = ({ handleSubmit }) => {
                   name='name'
                   required
                 />
-                <label style={{ fontSize: '.75rem' }} htmlFor="email">Email: *</label>
+                <label style={{ fontSize: '.75rem' }} htmlFor='email'>Email: *</label>
                 <Field
                   style={{ display: 'block', marginBottom: '1rem' }}
                   label='Email'
@@ -54,14 +54,14 @@ const ContactForm = ({ handleSubmit }) => {
                 />
               </div>
               <div>
-                <label style={{ fontSize: '.75rem' }} htmlFor="phone">Phone Number:</label>
+                <label style={{ fontSize: '.75rem' }} htmlFor='phone'>Phone Number:</label>
                 <Field
                   style={{ display: 'block', marginBottom: '.5rem' }}
                   label='Phone'
                   placeholder='Phone Number'
                   name='phone'
                 />
-                <label style={{ fontSize: '.75rem' }} htmlFor="organization">Organization:</label>
+                <label style={{ fontSize: '.75rem' }} htmlFor='organization'>Organization:</label>
                 <Field
                   style={{ display: 'block', marginBottom: '1rem' }}
                   label='Organization'
@@ -71,8 +71,8 @@ const ContactForm = ({ handleSubmit }) => {
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <label style={{ fontSize: '.75rem', marginTop: '1rem' }} htmlFor="message">Message: *</label>
-              <label style={{ fontSize: '.65rem', marginTop: '1rem' }} htmlFor="message">* = Required Fields</label>
+              <label style={{ fontSize: '.75rem', marginTop: '1rem' }} htmlFor='message'>Message: *</label>
+              <label style={{ fontSize: '.65rem', marginTop: '1rem' }} htmlFor='message'>* = Required Fields</label>
             </div>
             <div>
               <Field
